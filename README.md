@@ -10,6 +10,7 @@ Sets: List view and search bar of study options, add content
 - View card sets and worksheets (can direct to study page)
 - Add your own sets and worksheets 
 - Download or add to account
+- Allow importing of sets or worksheets through links
 
 Study: Select a dataset and choose study options
 - Download worksheets
