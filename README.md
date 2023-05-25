@@ -2,8 +2,16 @@
 EdTech Web App
 
 Home Page: Show create a game, available games, and datasets
+ - Custom games 
+ - Live servers 
+ - Multiple choice for now
 
-Datasets: List view and search bar of study options, add content
+Sets: List view and search bar of study options, add content
+- View card sets and worksheets (can direct to study page)
+- Add your own sets and worksheets 
+- Download or add to account
 
 Study: Select a dataset and choose study options
+- Download worksheets
+- View flash cards in study mode (can come from sets page)
 
