@@ -1,5 +1,5 @@
 # NexusSurge
-No need to choose between studying for your next test or playing games with your friends.
+# No need to choose between studying for your next test or playing games with your friends.
 
 Home Page: Show create a game, available games, and datasets
  - Custom games 
