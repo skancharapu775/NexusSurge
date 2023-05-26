@@ -9,6 +9,7 @@ Home Page: Show create a game, available games, and datasets
 Sets: List view and search bar of study options, add content
 - View card sets and worksheets (can direct to study page)
 - Add your own sets and worksheets 
+- Sort by times used + likes
 - Download or add to account
 - Allow importing of sets or worksheets through links
 
