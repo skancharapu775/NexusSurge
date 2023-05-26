@@ -1,5 +1,10 @@
+import Header from '../components/Header.js'
+
 export function About() {
     return (
-        <p>About</p>
+        <>
+            <Header />
+            <p>About</p>
+        </>
     )
 }

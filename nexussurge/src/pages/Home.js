@@ -1,5 +1,10 @@
+import Header from '../components/Header.js'
+
 export function Home() {
     return (
-        <p>Home</p>
+        <>
+            <Header />
+            <p>Home</p>
+        </>
     )
 }

@@ -1,5 +1,10 @@
+import Header from '../components/Header.js'
+
 export function Study() {
     return (
-        <p>Study</p>
+        <>
+            <Header />
+            <p>Study</p>
+        </>
     )
 }

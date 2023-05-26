@@ -13,6 +13,7 @@ function App() {
   return (
     <>
       {/* Routing to different pages, specify page to render */}
+      <div className="global-style">
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
@@ -23,6 +24,7 @@ function App() {
 
         </Routes>
       </BrowserRouter>
+      </div>
     </>
     );
 }
