@@ -17,3 +17,8 @@ Study: Select a dataset and choose study options
 - Download worksheets
 - View flash cards in study mode (can come from sets page)
 
+Profile: Dashboard for stats, friends, and group
+- Stats on games + saved sets (same on study page)
+- Groups and classes for sharing of materials between students
+- Add friends for easy game challenged
+
