@@ -29,7 +29,7 @@ def list_scraper(links):
             time.sleep(INCREMENT)
 
 
-link = "https://quizlet.com/27462182/econ-unit-1-flash-cards/"
+link = "https://quizlet.com/806549043/autosaved"
 
 headers = {
   'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
