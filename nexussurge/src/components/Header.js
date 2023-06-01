@@ -21,6 +21,7 @@ export default function Header() {
                             <Button sx={{ fontFamily: 'Rubik' }} color='inherit' href='/about'>About</Button>
                             <Button sx={{ fontFamily: 'Rubik' }} color='inherit' href='/sets'>Sets</Button>
                             <Button sx={{ fontFamily: 'Rubik' }} color='inherit' href='/study'>Study</Button>
+                            <Button sx={{ fontFamily: 'Rubik' }} color='inherit' href='/profile'>Profile</Button>
                         </Stack>
                     </Toolbar>
                 </AppBar>

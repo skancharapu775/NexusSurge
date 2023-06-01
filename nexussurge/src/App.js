@@ -7,6 +7,7 @@ import { Home } from './pages/Home.js';
 import { About } from './pages/About.js';
 import { Sets } from './pages/Sets.js';
 import { Study } from './pages/Study.js';
+import { Profile } from './pages/Profile.js';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="sets" element={<Sets />} />
           <Route path="study" element={<Study />} />
+          <Route path="profile" element={<Profile />} />
 
         </Routes>
       </BrowserRouter>
