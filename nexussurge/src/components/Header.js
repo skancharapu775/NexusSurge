@@ -41,7 +41,6 @@ export default function Header() {
                         <Stack direction='row' spacing = {1} sx={{ fontFamily: 'Rubik' }}>
                             <Button sx={{ fontFamily: 'Rubik' }} color='inherit' href='/home'></Button>
                             <Button sx={{ fontFamily: 'Rubik' }} color='inherit' href='/home'>Home</Button>
-                            <Button sx={{ fontFamily: 'Rubik' }} color='inherit' href='/about'>About</Button>
                             <Button sx={{ fontFamily: 'Rubik' }} color='inherit' href='/sets'>Sets</Button>
                             <Button sx={{ fontFamily: 'Rubik' }} color='inherit' href='/study'>Study</Button>
                             <Button sx={{ fontFamily: 'Rubik' }} color='inherit' href='/profile'>Profile</Button>

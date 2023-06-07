@@ -14,7 +14,7 @@ export function Profile() {
   return (
     <>
         <Header />
-        {/* create two separated sections */}
+        {/* two separated sections */}
         <div className="body-content" style={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box sx={{ width: '100%', maxWidth: '80vw', bgcolor: 'background.paper' }}>
                 <Box sx={{ my: 5, mx: 2 }}>

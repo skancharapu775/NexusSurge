@@ -52,7 +52,7 @@ export function Home() {
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
                 Speed up studying with interactive, engaging activities
             </Typography>
-            {/* create 3 inline cards */}
+            {/* 3 inline cards */}
             <Grid container spacing={2} sx={{justifyContent: 'center'}}>
                 <Grid item xs={12} sm={4}>
                     <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -65,7 +65,7 @@ export function Home() {
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <Button href="/flashcards" size="small">Find a Match</Button>
+                            <Button href="/study" size="small">Find a Match</Button>
                         </CardActions>
                     </Card>
                 </Grid>
@@ -80,12 +80,13 @@ export function Home() {
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <Button href="/worksheets" size="small">View</Button>
+                            <Button href="/sets" size="small">View</Button>
                         </CardActions>
                     </Card>
                 </Grid>
             </Grid>
           </Container>
+          {/* jank spacing thing */}
           <h3></h3>
           <h3></h3>
           <h3></h3>
