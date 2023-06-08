@@ -113,7 +113,9 @@ export function Home() {
       <Box sx={{ flexGrow: 1 }}>
         <Header />
         <Box sx={{ display: 'flex' }}>
-            <SideDrawer sets={test_user_sets_result} />
+                <Box sx={{ display: 'flex', boxShadow: '5px 0px 5px rgba(0, 0, 0, 0.12)', height: '100vh' }}>
+                    <SideDrawer sets={test_user_sets_result} />
+                </Box>
             <Box sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1, p: 10, paddingTop: 5, paddingRight: 10 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
                 </Box>
