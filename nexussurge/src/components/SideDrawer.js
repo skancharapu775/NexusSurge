@@ -11,10 +11,10 @@ export default function SideDrawer({ sets }) {
   return (
     <Drawer
       sx={{
-        width: 240,
+        width: 300,
         flexShrink: 0,
         '& .MuiDrawer-paper': {
-          width: 240,
+          width: 300,
           boxSizing: 'border-box',
           marginTop: '64px',
           paddingLeft: '16px',
@@ -31,7 +31,7 @@ export default function SideDrawer({ sets }) {
     >
       <Box sx={{ p: 2 }}>
         <Typography variant="h6" gutterBottom sx = {{ fontFamily: 'Rubik' }}>
-          Find New Sets
+          Choose Game Set
         </Typography>
         <TextField
           sx = {{ fontFamily: 'Rubik' }}
@@ -44,7 +44,7 @@ export default function SideDrawer({ sets }) {
       </Box>
       <Divider />
       <Typography variant="h6" sx={{ p: 2, fontFamily: 'Rubik' }} >
-        Your Sets
+        Choose Personal Set
         </Typography>
         <Divider />
       <Stack spacing={2} sx={{ p: 2, paddingBottom: '75px' }}>
@@ -59,7 +59,7 @@ export default function SideDrawer({ sets }) {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small" sx = {{ fontFamily: 'Rubik' }}>Study</Button>
+              <Button variant="contained" color="success" size="small" sx = {{ fontFamily: 'Rubik' }}>Select</Button>
             </CardActions>
           </Card>
         ))}
