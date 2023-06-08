@@ -132,3 +132,7 @@
 .white-text {
   color: #f5f5f5
 }
+
+.card-link {
+  text-decoration: none;
+}

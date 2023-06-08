@@ -1,102 +1,141 @@
-import Header from '../components/Header.js'
-import { Container, Typography, Stack, Button, Drawer } from '@mui/material'
-import { Card, CardContent, CardActions, Divider } from '@mui/material'
-import { Box } from '@mui/system'
-import React from 'react'
+import Header from '../components/Header.js';
+import { Container, Typography, Stack, Button, Drawer, Grid, Card, CardContent } from '@mui/material';
+import { Box } from '@mui/system';
+import React from 'react';
+import SideDrawer from '../components/SideDrawer.js';
+import '../App.css';
 
 export function Home() {
-    /* Example API result from my sets */
-    const test_user_sets_result = [
-        {
-            title: "Test Set 1 - Personal",
-            description: "This is a test set",
-            creator: "Test User 1",
-            num_cards: 10,
-            id: 1
-        },
-        {
-            title: "Test Set 2 - Personal",
-            description: "This is a test set",
-            creator: "Test User 2",
-            num_cards: 10,
-            id: 2
-        },
-        {
-            title: "Test Set 3 - Personal",
-            description: "This is a test set",
-            creator: "Test User 3",
-            num_cards: 10,
-            id: 3
-        },
-        {
-            title: "Test Set 4 - Personal",
-            description: "This is a test set",
-            creator: "Test User 4",
-            num_cards: 10,
-            id: 4
-        },
-        {
-            title: "Test Set 5 - Personal",
-            description: "This is a test set",
-            creator: "Test User 5",
-            num_cards: 10,
-            id: 5
-        }]
+  /* Example API result from my sets */
+  const test_user_sets_result = [
+    {
+      title: 'Test Set 1 - Personal',
+      description: 'This is a test set',
+      creator: 'Test User 1',
+      num_cards: 10,
+      id: 1,
+    },
+    {
+      title: 'Test Set 2 - Personal',
+      description: 'This is a test set',
+      creator: 'Test User 2',
+      num_cards: 10,
+      id: 2,
+    },
+    {
+      title: 'Test Set 3 - Personal',
+      description: 'This is a test set',
+      creator: 'Test User 3',
+      num_cards: 10,
+      id: 3,
+    },
+    {
+      title: 'Test Set 4 - Personal',
+      description: 'This is a test set',
+      creator: 'Test User 4',
+      num_cards: 10,
+      id: 4,
+    },
+    {
+      title: 'Test Set 5 - Personal',
+      description: 'This is a test set',
+      creator: 'Test User 5',
+      num_cards: 10,
+      id: 5,
+    },
+  ];
 
-    return (
-        <>
-            <Box sx={{ flexGrow: 1 }}>
-            <Header />
-            <Box sx={{ display: 'flex' }}>
-            <Drawer
-            sx={{
-                width: 240,
-                flexShrink: 0,
-                '& .MuiDrawer-paper': {
-                width: 240,
-                boxSizing: 'border-box',
-                marginTop: '64px',
-                paddingLeft: '16px',
-                overflowY: 'scroll', // Enable scrolling
-                '-ms-overflow-style': 'none', // Hide scrollbar, edge
-                '&::-webkit-scrollbar': {
-                    display: 'none', // Hide scrollbar, chrome
-                },
-                scrollbarWidth: 'none', // Hide scrollbar, firefox
-                },
-            }}
-            variant="permanent"
-            anchor="left"
-            >
-                <Box sx={{ p: 2 }}>
-                    <Typography variant="h6" gutterBottom>
-                    Choose Sets
-                    </Typography>
-                </Box>
-                <Divider />
-                <Stack spacing={2} sx={{ p: 2 }}>
-                    {test_user_sets_result.map((set) => (
-                    <Card key={set.id}>
-                        <CardContent>
-                        <Typography variant="h6" component="div">
-                            {set.title}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            {set.description}
-                        </Typography>
-                        </CardContent>
-                        <CardActions>
-                        <Button size="small">Study</Button>
-                        </CardActions>
-                    </Card>
-                    ))}
-                </Stack>
-                </Drawer>
-                <Box sx={{ flexGrow: 1 }}>
-                {/* Main content */}
-                </Box>
+  const card_data_example = [
+    {
+        title: 'HomePage Card 1',
+        description: 'This is a test card',
+        link: 'https://example.com'
+    },
+    {
+        title: 'HomePage Card 2',
+        description: 'This is a test card',
+        link: 'https://example.com'
+    },
+    {
+        title: 'HomePage Card 3',
+        description: 'This is a test card',
+        link: 'https://example.com'
+    },
+    {
+        title: 'HomePage Card 4',
+        description: 'This is a test card',
+        link: 'https://example.com'
+    },
+    {
+        title: 'HomePage Card 5',
+        description: 'This is a test card',
+        link: 'https://example.com'
+    },
+    {
+        title: 'HomePage Card 6',
+        description: 'This is a test card',
+        link: 'https://example.com'
+    },
+    {
+        title: 'HomePage Card 7',
+        description: 'This is a test card',
+        link: 'https://example.com'
+    },
+    {
+        title: 'HomePage Card 8',
+        description: 'This is a test card',
+        link: 'https://example.com'
+    },
+    {
+        title: 'HomePage Card 9',
+        description: 'This is a test card',
+        link: 'https://example.com'
+    },
+    {
+        title: 'HomePage Card 10',
+        description: 'This is a test card',
+        link: 'https://example.com'
+    },
+    {
+        title: 'HomePage Card 11',
+        description: 'This is a test card',
+        link: 'https://example.com'
+    },
+    {
+        title: 'HomePage Card 12',
+        description: 'This is a test card',
+        link: 'https://example.com'
+    }
+  ]
+
+  return (
+    <>
+        <Box sx={{ flexGrow: 1 }}>
+        <Header />
+        <Box sx={{ display: 'flex' }}>
+            <SideDrawer sets={test_user_sets_result} />
+            <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', p: 25 }}>
+            <Grid container spacing={2} sx={{ width: '100%', justifyContent: 'center' }}>
+            {card_data_example.map((card, index) => (
+                <Grid item xs={3} key={index}>
+                    <a href={card.link} className='card-link'>
+                        <Card className='center-card' sx={{ minHeight: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out', '&:hover': { transform: 'translateY(-5px)', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)' } }} onClick={() => window.location.href=card.link}>
+                            <CardContent className='card-content'>
+                                <Typography variant="h5" component="h2" d>
+                                {card.title}
+                                </Typography>
+                                <Typography color="textSecondary">
+                                {card.description}
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    </a>
+                </Grid>
+                ))}
+            </Grid>
             </Box>
-            </Box>
-        </>
-    )
+        </Box>
+        </Box>
+    </>
+  );
 }
