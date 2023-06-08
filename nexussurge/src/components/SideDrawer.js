@@ -1,7 +1,13 @@
-import React from 'react';
-import { Drawer, Typography, Stack, Card, CardContent, CardActions, Divider, Button, Box } from '@mui/material';
+import React, { useState } from 'react';
+import { Drawer, Typography, Stack, Card, CardContent, CardActions, Divider, Button, Box, TextField } from '@mui/material';
 
 export default function SideDrawer({ sets }) {
+  const [searchText, setSearchText] = useState('');
+
+  const filteredSets = sets.filter((set) =>
+    set.title.toLowerCase().includes(searchText.toLowerCase())
+  );
+
   return (
     <Drawer
       sx={{
@@ -25,12 +31,23 @@ export default function SideDrawer({ sets }) {
     >
       <Box sx={{ p: 2 }}>
         <Typography variant="h6" gutterBottom>
-          Choose Sets
+          Find New Sets
         </Typography>
+        <TextField
+          label="Search"
+          variant="outlined"
+          fullWidth
+          value={searchText}
+          onChange={(event) => setSearchText(event.target.value)}
+        />
       </Box>
       <Divider />
+      <Typography variant="h6" sx={{ p: 2 }}>
+        Your Sets
+        </Typography>
+        <Divider />
       <Stack spacing={2} sx={{ p: 2, paddingBottom: '75px' }}>
-        {sets.map((set) => (
+        {filteredSets.map((set) => (
           <Card key={set.id}>
             <CardContent>
               <Typography variant="h6" component="div">

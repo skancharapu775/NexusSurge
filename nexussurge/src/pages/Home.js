@@ -6,7 +6,8 @@ import SideDrawer from '../components/SideDrawer.js';
 import '../App.css';
 
 export function Home() {
-  /* Example API result from my sets */
+
+    /* Example API result from my sets */
   const test_user_sets_result = [
     {
       title: 'Test Set 1 - Personal',
@@ -106,7 +107,7 @@ export function Home() {
         description: 'This is a test card',
         link: 'https://example.com'
     }
-  ]
+  ];
 
   return (
     <>
