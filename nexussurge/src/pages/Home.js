@@ -111,7 +111,7 @@ export function Home() {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1 }} className='home-body'>
         <Header />
         <Box sx={{ display: 'flex' }}>
                 <Box sx={{ display: 'flex', boxShadow: '5px 0px 5px rgba(0, 0, 0, 0.12)', height: '100vh' }}>
@@ -126,10 +126,10 @@ export function Home() {
                     <a href={card.link} className='card-link'>
                         <Card className='center-card' sx={{ minHeight: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out', '&:hover': { transform: 'translateY(-5px)', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)' } }} onClick={() => window.location.href=card.link}>
                         <CardContent className='card-content'>
-                            <Typography variant="h5" component="h2" d>
+                            <Typography variant="h5" component="h2" d sx = {{ fontFamily: 'Rubik' }}>
                             {card.title}
                             </Typography>
-                            <Typography color="textSecondary">
+                            <Typography color="textSecondary" sx = {{ fontFamily: 'Rubik' }}>
                             {card.description}
                             </Typography>
                         </CardContent>
@@ -141,8 +141,8 @@ export function Home() {
             </Box>
             <Box sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1, paddingRight: '6vw', alignItems: 'center', justifyContent: 'center'}}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <Button variant="contained" color="primary" size="large" sx={{ m: 3, fontSize: 20, padding: '16px' }}>Create Party</Button>
-                    <Button variant="contained" color="secondary" size="large" sx={{ m: 3, fontSize: 20, padding: '16px' }}>Custom Settings</Button>
+                    <Button variant="contained" color="primary" size="large" sx={{ m: 3, fontSize: 20, padding: '16px', fontFamily: 'Rubik' }}>Create Party</Button>
+                    <Button variant="contained" color="secondary" size="large" sx={{ m: 3, fontSize: 20, padding: '16px', fontFamily: 'Rubik' }}>Custom Settings</Button>
                 </Box>
             </Box>
         </Box>

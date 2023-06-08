@@ -30,10 +30,11 @@ export default function SideDrawer({ sets }) {
       anchor="left"
     >
       <Box sx={{ p: 2 }}>
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" gutterBottom sx = {{ fontFamily: 'Rubik' }}>
           Find New Sets
         </Typography>
         <TextField
+          sx = {{ fontFamily: 'Rubik' }}
           label="Search"
           variant="outlined"
           fullWidth
@@ -42,7 +43,7 @@ export default function SideDrawer({ sets }) {
         />
       </Box>
       <Divider />
-      <Typography variant="h6" sx={{ p: 2 }}>
+      <Typography variant="h6" sx={{ p: 2, fontFamily: 'Rubik' }} >
         Your Sets
         </Typography>
         <Divider />
@@ -50,15 +51,15 @@ export default function SideDrawer({ sets }) {
         {filteredSets.map((set) => (
           <Card key={set.id}>
             <CardContent>
-              <Typography variant="h6" component="div">
+              <Typography variant="h6" component="div" sx = {{ fontFamily: 'Rubik' }}>
                 {set.title}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" color="text.secondary" sx = {{ fontFamily: 'Rubik' }}>
                 {set.description}
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Study</Button>
+              <Button size="small" sx = {{ fontFamily: 'Rubik' }}>Study</Button>
             </CardActions>
           </Card>
         ))}
