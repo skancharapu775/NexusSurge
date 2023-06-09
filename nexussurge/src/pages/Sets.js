@@ -169,8 +169,8 @@ export function Sets() {
                                     <Typography variant="h5">{result.title}</Typography>
                                     <Typography variant="subtitle1">{result.num_cards} terms by {result.creator}</Typography>
                                 </Box>
-                                <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '10px' }}>
-                                    <IconButton edge="end" aria-label="delete"><AddCircleIcon /></IconButton>
+                                <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '10px', marginRight: '20px' }}>
+                                    <IconButton edge="end" aria-label="delete" color = 'success'><AddCircleIcon /></IconButton>
                                 </Box>
                             </Box>
                         ))}
