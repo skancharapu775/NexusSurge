@@ -122,7 +122,7 @@ export function Sets() {
     return (
         <>
             <Header />
-            <Box sx={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', height: '100vh' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', height: '100vh' , marginTop:'25px'}}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '30vw', height: '80vh' }}>
                     <Typography component="h1" variant="h2" align="center" color="text.primary" gutterBottom fontFamily={'Rubik'}>
                         Saved Sets
@@ -145,10 +145,10 @@ export function Sets() {
                     </Typography>
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '80vh' }}>
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '50%', height: '80vh' }}>
-                      <TextField id="outlined-basic" label="Search" variant="outlined" sx={{ width: '180%', height: '5vh' }} />
-                      <Button variant="contained" sx={{ width: '180%', height: '5vh', marginTop: '10px', marginBottom: '5px' }}>Search</Button>
+                      <TextField id="outlined-basic" label="Search for Sets and Worksheets" variant="outlined" sx={{ width: '180%', height: '5vh' }} />
+                      {/*<Button variant="contained" sx={{ width: '180%', height: '5vh', marginTop: '10px', marginBottom: '5px' }}>Search</Button>*/}
                     </Box>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '80vh', overflow: 'auto', marginTop: '-340px' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '80vh', overflow: 'auto', marginTop: '-370px' }}>
                        <Box sx={{ display: 'flex', flexDirection: 'row', width: '90%', height: '9vh', padding: '2vh', border: '2px solid black', marginBottom: '1vh'}}>
                                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                                     <Typography variant="h5">Search for flashcard sets and worksheets made by other users!</Typography>

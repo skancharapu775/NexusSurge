@@ -84,7 +84,7 @@ export function Study() {
     <>
       <Header />
       <Box sx={{ display: 'flex', flexGrow: 1, height: '100%', marginTop: '8vh', fontFamily: 'Rubik, sans-serif' }}>
-      <Box sx={{ width: '50%', borderRight: 1, borderColor: 'divider', height: '100vh', fontFamily: 'Rubik, sans-serif' }}>
+      <Box sx={{ width: '50%', borderRight: 1, borderColor: 'divider', height: '100vh', fontFamily: 'Rubik, sans-serif', marginTop:'25px'}}>
           <Typography variant="h3" sx={{ p: 2, fontFamily: 'Rubik', paddingBottom: 0, textAlign: 'center' }}>
             Study Sets
           </Typography>
@@ -127,7 +127,7 @@ export function Study() {
             </Grid>
           </Box>
         </Box>
-        <Box sx={{ width: '50%', height: '100%', fontFamily: 'Rubik, sans-serif' }}>
+        <Box sx={{ width: '50%', height: '100%', fontFamily: 'Rubik, sans-serif', marginTop:'25px'}}>
         <Typography variant="h3" sx={{ p: 2, fontFamily: 'Rubik', paddingBottom: 0, textAlign: 'center' }}>
           Worksheets
         </Typography>
