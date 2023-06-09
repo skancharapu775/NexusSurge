@@ -122,7 +122,7 @@ export function Home() {
                 </Box>
                 <Grid container spacing={2} sx={{ width: '100%', justifyContent: 'center', paddingTop: '7.5vh' }}>
                 {card_data_example.map((card, index) => (
-                    <Grid item xs={3} key={index}>
+                    <Grid item xs={4} key={index}>
                     <a href={card.link} className='card-link'>
                         <Card className='center-card' sx={{ minHeight: '150px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out', '&:hover': { transform: 'translateY(-5px)', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)' } }} onClick={() => window.location.href=card.link}>
                         <CardContent className='card-content'>

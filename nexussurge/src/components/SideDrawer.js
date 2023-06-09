@@ -31,7 +31,7 @@ export default function SideDrawer({ sets }) {
     >
       <Box sx={{ p: 2 }}>
         <Typography variant="h6" gutterBottom sx = {{ fontFamily: 'Rubik' }}>
-          Choose Game Set
+          Choose Database Set
         </Typography>
         <TextField
           sx = {{ fontFamily: 'Rubik' }}
