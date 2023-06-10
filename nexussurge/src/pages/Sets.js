@@ -79,7 +79,15 @@ export function Sets() {
             creator: "Test User 5",
             num_cards: 10,
             id: 5
-        }]
+        },
+        {
+            title: "Test Set 6 - Popular",
+            description: "This is a test set",
+            creator: "Test User 6",
+            num_cards: 10,
+            id: 6
+        }
+    ]
 
     /* Example API result from my sets */
     const test_user_sets_result = [
@@ -117,20 +125,28 @@ export function Sets() {
             creator: "Test User 5",
             num_cards: 10,
             id: 5
-        }]
+        },
+        {
+            title: "Test Set 6 - Personal",
+            description: "This is a test set",
+            creator: "Test User 6",
+            num_cards: 10,
+            id: 6
+        }
+    ]
 
     return (
         <>
             <Header />
-            <Box sx={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', height: '100vh' , marginTop:'25px'}}>
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '30vw', height: '80vh' }}>
-                    <Typography component="h1" variant="h2" align="center" color="text.primary" gutterBottom fontFamily={'Rubik'}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', height: '100vh', marginTop:'25px' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '30vw', height: '80vh', backgroundColor: '#F5F5F5', borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)' }}>
+                    <Typography component="h1" variant="h2" align="center" color="text.primary" gutterBottom fontFamily={'Rubik'} style={{ marginTop: '20px' }}>
                         Saved Sets
                     </Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '80vh', overflow: 'auto', marginTop: '10px' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '70vh', overflowY: 'scroll', marginTop: '10px' }}>
                         {test_user_sets_result.map((result) => (
-                            <Box key={result.id} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '70%', height: '10vh', padding: '1vh', border: '1px solid black', marginBottom: '1vh' }}>
-                                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                            <Box key={result.id}  sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 'auto', minHeight: '10vh', maxWidth: '20vw',padding: '1vh', border: '1px solid grey', marginBottom: '1vh', borderRadius: '10px', backgroundColor: 'white', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)' }}>
+                                <Box sx={{ display: 'flex', flexDirection: 'column', width: '70%' }}>
                                     <Typography variant="h5">{result.title}</Typography>
                                     <Typography variant="subtitle1">{result.num_cards} terms by {result.creator}</Typography>
                                 </Box>
@@ -139,38 +155,46 @@ export function Sets() {
                     </Box>
                 </Box>
                 <Box sx={{ width: '1px', height: '80vh', backgroundColor: 'black' }} />
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '30vw', height: '80vh' }}>
-                    <Typography component="h1" variant="h2" align="center" color="text.primary" gutterBottom fontFamily={'Rubik'}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '30vw', height: '80vh', backgroundColor: '#F5F5F5', borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)' }}>
+                    <Typography component="h1" variant="h2" align="center" color="text.primary" gutterBottom fontFamily={'Rubik'} style={{ marginTop: '20px' }}>
                         Database
                     </Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '80vh' }}>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '50%', height: '80vh' }}>
-                      <TextField id="outlined-basic" label="Search for Sets and Worksheets" variant="outlined" sx={{ width: '180%', height: '5vh' }} />
-                      {/*<Button variant="contained" sx={{ width: '180%', height: '5vh', marginTop: '10px', marginBottom: '5px' }}>Search</Button>*/}
-                    </Box>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '80vh', overflow: 'auto', marginTop: '-370px' }}>
-                       <Box sx={{ display: 'flex', flexDirection: 'row', width: '90%', height: '9vh', padding: '2vh', border: '2px solid black', marginBottom: '1vh'}}>
-                                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                                    <Typography variant="h5">Search for flashcard sets and worksheets made by other users!</Typography>
-                                </Box>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '70vh', marginTop: '10px' }}>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '50%', height: '5vh', marginBottom: '10px' }}>
+                            <TextField id="outlined-basic" label="Search for Sets and Worksheets" variant="outlined" sx={{ width: '100%', height: '100%' }} />
+                        </Box>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '60vh', overflowY: 'scroll' }}>
+                            {/* search column content */}
+                            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '60vh', overflowY: 'scroll', marginTop: '5vh' }}>
+                                {test_search_results.map((result) => (
+                                    <Box key={result.id} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 'auto', minHeight: '10vh', maxWidth: '20vw',padding: '1vh', border: '1px solid grey', marginBottom: '1vh', borderRadius: '10px', backgroundColor: 'white', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)' }}>
+                                        <Box sx={{ display: 'flex', flexDirection: 'column', width: '70%', fontFamily: 'Rubik' }}>
+                                            <Typography variant="h5">{result.title}</Typography>
+                                            <Typography variant="subtitle1">{result.num_cards} terms by {result.creator}</Typography>
+                                        </Box>
+                                        <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '5px', marginRight: '10px' }}>
+                                            <IconButton edge="end" aria-label="delete" color='info'><AddCircleIcon /></IconButton>
+                                        </Box>
+                                    </Box>
+                                ))}
+                            </Box>
                         </Box>
                     </Box>
-                    </Box>
                 </Box>
-                <Box sx={{ width: '1px', height: '80vh', backgroundColor: 'black' }} />
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '30vw', height: '80vh' }}>
-                    <Typography component="h1" variant="h2" align="center" color="text.primary" gutterBottom fontFamily={'Rubik'}>
+                <Box sx={{ width: '1px', height: '80vh', backgroundColor: 'grey' }} />
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '30vw', height: '80vh', backgroundColor: '#F5F5F5', borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)' }}>
+                    <Typography component="h1" variant="h2" align="center" color="text.primary" gutterBottom fontFamily={'Rubik'} style={{ marginTop: '20px' }}>
                         Trending Sets
                     </Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '80vh', overflow: 'auto', marginTop: '10px' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '70vh', overflowY: 'scroll', marginTop: '10px' }}>
                         {test_popular_results.map((result) => (
-                            <Box key={result.id} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '70%', height: '10vh', padding: '1vh', border: '1px solid black', marginBottom: '1vh' }}>
-                                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                            <Box key={result.id} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 'auto', minHeight: '10vh', maxWidth: '20vw',padding: '1vh', border: '1px solid grey', marginBottom: '1vh', borderRadius: '10px', backgroundColor: 'white', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)' }}>
+                                <Box sx={{ display: 'flex', flexDirection: 'column', width: '70%', fontFamily: 'Rubik' }}>
                                     <Typography variant="h5">{result.title}</Typography>
                                     <Typography variant="subtitle1">{result.num_cards} terms by {result.creator}</Typography>
                                 </Box>
-                                <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '10px', marginRight: '20px' }}>
-                                    <IconButton edge="end" aria-label="delete" color = 'success'><AddCircleIcon /></IconButton>
+                                <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '5px', marginRight: '10px' }}>
+                                    <IconButton edge="end" aria-label="delete" color='info'><AddCircleIcon /></IconButton>
                                 </Box>
                             </Box>
                         ))}
