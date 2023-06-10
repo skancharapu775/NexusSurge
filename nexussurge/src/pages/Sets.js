@@ -145,8 +145,7 @@ export function Sets() {
                     </Typography>
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '70vh', overflowY: 'scroll', marginTop: '10px' }}>
                         {test_user_sets_result.map((result) => (
-                            <Box key={result.id}  sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 'auto', minHeight: '10vh', maxWidth: '20vw',padding: '1vh', border: '1px solid grey', marginBottom: '1vh', borderRadius: '10px', backgroundColor: 'white', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)' }}>
-                                <Box sx={{ display: 'flex', flexDirection: 'column', width: '70%' }}>
+                            <Box key={result.id} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 'auto', minHeight: '10vh', maxWidth: '20vw', padding: '1vh', marginBottom: '1vh', borderRadius: '10px', backgroundColor: 'white', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)', marginTop: '10px' }}>                                <Box sx={{ display: 'flex', flexDirection: 'column', width: '70%' }}>
                                     <Typography variant="h5">{result.title}</Typography>
                                     <Typography variant="subtitle1">{result.num_cards} terms by {result.creator}</Typography>
                                 </Box>
@@ -167,8 +166,7 @@ export function Sets() {
                             {/* search column content */}
                             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '60vh', overflowY: 'scroll', marginTop: '5vh' }}>
                                 {test_search_results.map((result) => (
-                                    <Box key={result.id} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 'auto', minHeight: '10vh', maxWidth: '20vw',padding: '1vh', border: '1px solid grey', marginBottom: '1vh', borderRadius: '10px', backgroundColor: 'white', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)' }}>
-                                        <Box sx={{ display: 'flex', flexDirection: 'column', width: '70%', fontFamily: 'Rubik' }}>
+                                    <Box key={result.id} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 'auto', minHeight: '10vh', maxWidth: '20vw', padding: '1vh', marginBottom: '1vh', borderRadius: '10px', backgroundColor: 'white', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)', marginTop: '10px' }}>                                        <Box sx={{ display: 'flex', flexDirection: 'column', width: '70%', fontFamily: 'Rubik' }}>
                                             <Typography variant="h5">{result.title}</Typography>
                                             <Typography variant="subtitle1">{result.num_cards} terms by {result.creator}</Typography>
                                         </Box>
@@ -181,15 +179,14 @@ export function Sets() {
                         </Box>
                     </Box>
                 </Box>
-                <Box sx={{ width: '1px', height: '80vh', backgroundColor: 'grey' }} />
+                <Box sx={{ width: '1px', height: '80vh' }} />
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '30vw', height: '80vh', backgroundColor: '#F5F5F5', borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)' }}>
                     <Typography component="h1" variant="h2" align="center" color="text.primary" gutterBottom fontFamily={'Rubik'} style={{ marginTop: '20px' }}>
                         Trending Sets
                     </Typography>
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '70vh', overflowY: 'scroll', marginTop: '10px' }}>
                         {test_popular_results.map((result) => (
-                            <Box key={result.id} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 'auto', minHeight: '10vh', maxWidth: '20vw',padding: '1vh', border: '1px solid grey', marginBottom: '1vh', borderRadius: '10px', backgroundColor: 'white', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)' }}>
-                                <Box sx={{ display: 'flex', flexDirection: 'column', width: '70%', fontFamily: 'Rubik' }}>
+                            <Box key={result.id} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 'auto', minHeight: '10vh', maxWidth: '20vw', padding: '1vh', marginBottom: '1vh', borderRadius: '10px', backgroundColor: 'white', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)', marginTop: '10px' }}>                                <Box sx={{ display: 'flex', flexDirection: 'column', width: '70%', fontFamily: 'Rubik' }}>
                                     <Typography variant="h5">{result.title}</Typography>
                                     <Typography variant="subtitle1">{result.num_cards} terms by {result.creator}</Typography>
                                 </Box>
