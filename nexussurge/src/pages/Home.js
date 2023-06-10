@@ -10,35 +10,35 @@ export function Home() {
     /* Example API result from my sets */
   const test_user_sets_result = [
     {
-      title: 'Test Set 1 - Personal',
+      title: 'Test Set 1',
       description: 'This is a test set',
       creator: 'Test User 1',
       num_cards: 10,
       id: 1,
     },
     {
-      title: 'Test Set 2 - Personal',
+      title: 'Test Set 2',
       description: 'This is a test set',
       creator: 'Test User 2',
       num_cards: 10,
       id: 2,
     },
     {
-      title: 'Test Set 3 - Personal',
+      title: 'Test Set 3',
       description: 'This is a test set',
       creator: 'Test User 3',
       num_cards: 10,
       id: 3,
     },
     {
-      title: 'Test Set 4 - Personal',
+      title: 'Test Set 4',
       description: 'This is a test set',
       creator: 'Test User 4',
       num_cards: 10,
       id: 4,
     },
     {
-      title: 'Test Set 5 - Personal',
+      title: 'Test Set 5',
       description: 'This is a test set',
       creator: 'Test User 5',
       num_cards: 10,
