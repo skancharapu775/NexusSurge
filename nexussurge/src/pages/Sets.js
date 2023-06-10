@@ -153,7 +153,7 @@ export function Sets() {
                         ))}
                     </Box>
                 </Box>
-                <Box sx={{ width: '1px', height: '80vh', backgroundColor: 'black' }} />
+                <Box sx={{ width: '1px', height: '80vh', backgroundColor: 'white' }} />
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '30vw', height: '80vh', backgroundColor: '#F5F5F5', borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)' }}>
                     <Typography component="h1" variant="h2" align="center" color="text.primary" gutterBottom fontFamily={'Rubik'} style={{ marginTop: '20px' }}>
                         Database
