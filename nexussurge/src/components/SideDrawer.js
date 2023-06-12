@@ -1,3 +1,4 @@
+import '../App.css';
 import React, { useState } from 'react';
 import { Drawer, Typography, Stack, Card, CardContent, CardActions, Divider, Button, Box, TextField } from '@mui/material';
 
@@ -7,10 +8,10 @@ export default function SideDrawer({ sets }) {
   const filteredSets = sets.filter((set) =>
     set.title.toLowerCase().includes(searchText.toLowerCase())
   );
-
+  const scolor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
   return (
     <Drawer
-      sx={{
+      sx={{ 
         width: 300,
         flexShrink: 0,
         '& .MuiDrawer-paper': {
@@ -20,6 +21,7 @@ export default function SideDrawer({ sets }) {
           paddingLeft: '16px',
           overflowY: 'scroll', // Enable scrolling
           '-ms-overflow-style': 'none', // Hide scrollbar, edge
+          backgroundColor: scolor,
           '&::-webkit-scrollbar': {
             display: 'none', // Hide scrollbar, chrome
           },
@@ -27,10 +29,9 @@ export default function SideDrawer({ sets }) {
         },
       }}
       variant="permanent"
-      anchor="left"
-    >
-      <Box sx={{ p: 2 }}>
-        <Typography variant="h6" gutterBottom sx = {{ fontFamily: 'Rubik' }}>
+      anchor="left">
+      <Box sx={{ p: 2, backgroundColor: scolor }}>
+        <Typography variant="h6" sx = {{ fontFamily: 'Rubik', backgroundColor: scolor }}>
           Choose Database Set
         </Typography>
         <TextField
@@ -43,11 +44,11 @@ export default function SideDrawer({ sets }) {
         />
       </Box>
       <Divider />
-      <Typography variant="h6" sx={{ p: 2, fontFamily: 'Rubik' }} >
+      <Typography variant="h6" sx={{ p: 2, fontFamily: 'Rubik', backgroundColor: scolor }} >
         Choose Personal Set
         </Typography>
         <Divider />
-      <Stack spacing={2} sx={{ p: 2, paddingBottom: '75px' }}>
+      <Stack spacing={2} sx={{ p: 2, paddingBottom: '75px', backgroundColor: scolor }}>
         {filteredSets.map((set) => (
           <Card key={set.id}>
             <CardContent>

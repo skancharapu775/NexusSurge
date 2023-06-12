@@ -1,3 +1,8 @@
+:root {
+  --base-color: rgb(25, 24, 37);
+  --font-color: rgb(195, 200, 255);
+  --secondary-color: rgb(53, 50, 77);
+}
 .App {
   text-align: center;
 }
@@ -6,13 +11,15 @@
   height: 40vmin;
   pointer-events: none;
 }
+#hd {
+  box-shadow: none;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -32,7 +39,12 @@
   font-family: "Rubik", sans-serif;
 }
 .header {
+  color:var(--font-color);
+  background-color:var(--base-color);
   font-family: "Rubik", sans-serif;
+}
+#hbtn:hover {
+  color:white;
 }
 
 @keyframes App-logo-spin {
@@ -43,6 +55,7 @@
     transform: rotate(360deg);
   }
 }
+
 
 .body-background {
   background-repeat: no-repeat;
