@@ -9,6 +9,8 @@ export default function SideDrawer({ sets }) {
     set.title.toLowerCase().includes(searchText.toLowerCase())
   );
   const scolor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
+  const fcolor = getComputedStyle(document.documentElement).getPropertyValue('--font-color');
+  // const bcolor = getComputedStyle(document.documentElement).getPropertyValue('--base-color');
   return (
     <Drawer
       sx={{ 
@@ -31,26 +33,25 @@ export default function SideDrawer({ sets }) {
       variant="permanent"
       anchor="left">
       <Box sx={{ p: 2, backgroundColor: scolor }}>
-        <Typography variant="h6" sx = {{ fontFamily: 'Rubik', backgroundColor: scolor }}>
+        <Typography color={fcolor} variant="h6" sx = {{ fontFamily: 'Rubik', backgroundColor: scolor }}>
           Choose Database Set
         </Typography>
         <TextField
-          sx = {{ fontFamily: 'Rubik' }}
-          label="Search"
-          variant="outlined"
-          fullWidth
+          id="searchbar"
+          sx = {{ fontFamily: 'Rubik', backgroundColor: fcolor, borderRadius: '8px', mt: '.5vh'}}
           value={searchText}
           onChange={(event) => setSearchText(event.target.value)}
+          
         />
       </Box>
       <Divider />
-      <Typography variant="h6" sx={{ p: 2, fontFamily: 'Rubik', backgroundColor: scolor }} >
+      <Typography color={fcolor} variant="h6" sx={{ p: 2, fontFamily: 'Rubik', backgroundColor: scolor }} >
         Choose Personal Set
         </Typography>
         <Divider />
       <Stack spacing={2} sx={{ p: 2, paddingBottom: '75px', backgroundColor: scolor }}>
         {filteredSets.map((set) => (
-          <Card key={set.id}>
+          <Card key={set.id} sx={{backgroundColor: fcolor}}>
             <CardContent>
               <Typography variant="h6" component="div" sx = {{ fontFamily: 'Rubik' }}>
                 {set.title}
@@ -60,7 +61,7 @@ export default function SideDrawer({ sets }) {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="contained" color="success" size="small" sx = {{ fontFamily: 'Rubik' }}>Select</Button>
+              <Button id="setbutton" variant="contained" color="success" size="small" sx = {{ fontFamily: 'Rubik', backgroundColor: scolor }}>Select</Button>
             </CardActions>
           </Card>
         ))}

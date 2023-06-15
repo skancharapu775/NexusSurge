@@ -20,6 +20,10 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+#searchbar {
+  height:1px;
+  color:var(--base-color);
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -34,7 +38,9 @@
 .App-link {
   color: #61dafb;
 }
-
+#setbutton:hover {
+  background-color: var(--base-color);
+}
 .global-style {
   font-family: "Rubik", sans-serif;
 }
