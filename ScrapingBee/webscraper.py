@@ -5,7 +5,7 @@ import urllib.parse
 from scrapingbee import ScrapingBeeClient
 
 card_url = "https://quizlet.com/27462182/econ-unit-1-flash-cards/"
-text_data_name = "quizlet_output.txt"
+text_data_name = "quizlet_page.txt"
 
 def scrape_content(url):
     client = ScrapingBeeClient(api_key=keys.BEEAPI_KEY)
@@ -16,14 +16,17 @@ def scrape_content(url):
 
     return response.content
 
-html_content = scrape_content(card_url)
-
 def store_data(filename, content):
     with open(filename, "w") as text_file:
-        text_file.write(content)
+        string_html = content.decode('utf-8')
+        text_file.write(string_html)
+    
+    return string_html
 
 html_content = scrape_content(card_url)
-# store_data(text_data_name, html_content)
+string_html = store_data(text_data_name, html_content)
+
+print(string_html)
 
 
 
