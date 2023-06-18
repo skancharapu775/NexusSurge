@@ -23,10 +23,17 @@ def store_data(filename, content):
     
     return string_html
 
-html_content = scrape_content(card_url)
-string_html = store_data(text_data_name, html_content)
+def parse_html_string(filename):
+    title = "hello"
+    cards = []
 
-print(string_html)
+    return title, cards
+
+# html_content = scrape_content(card_url)
+# string_html = store_data(text_data_name, html_content)
+# print(string_html)
+
+title = parse_html_string("quizlet_page.txt")
 
 
 
