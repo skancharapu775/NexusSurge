@@ -3,11 +3,8 @@ from scrapingbee import ScrapingBeeClient
 # pip install scrapingbee
 
 
-# card_url = "https://quizlet.com/27462182/econ-unit-1-flash-cards/"
-# card_url = "https://www.brainscape.com/flashcards/lecture-22-finishing-cost-curves-and-sta-10180242/packs/17828306"
-card_url = "https://quizlet.com/201826054/spanish-spanish-flash-cards/"
-
-text_data_name = "quizlet_page.txt"
+card_url = "https://quizlet.com/33708484/past-subjunctive-conjugation-and-uses-flash-cards/"
+text_data_name = "quizlet_page_original.txt"
 
 def scrape_content(url):
     client = ScrapingBeeClient(api_key=keys.BEEAPI_KEY)
@@ -46,6 +43,13 @@ def parse_quizlet(card_url):
     # Convert data to string
     string_content = html_content.decode('utf-8') 
 
+    # Get Title
+    before_title = 'rel="apple-touch-icon"><title>'
+    after_title =  '| Quizlet</title>'
+    title_start = string_content.find(before_title) + len(before_title)
+    title_end = string_content.find(after_title, title_start)
+    title = string_content[title_start:title_end]
+
     first_index = string_content.find(before_phrase)
     string_content = string_content[first_index:]
 
@@ -82,7 +86,7 @@ def parse_quizlet(card_url):
         # Preceding pattern
         loop_index = string_content.find(before_phrase, def_end)
 
-    return terms, definitions
+    return title, terms, definitions
 
 
 def parse_brain():
@@ -100,7 +104,8 @@ def parse_brain():
 # print(html_content)
 
 # Integrate parsing with scraping
-terms, definitions = parse_quizlet(card_url)
+title, terms, definitions = parse_quizlet(card_url)
+print(title)
 print(terms)
 print(definitions)
 
