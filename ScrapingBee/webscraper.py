@@ -1,13 +1,11 @@
-import requests
 import keys
-import urllib.parse
-# pip install scrapingbee
 from scrapingbee import ScrapingBeeClient
+# pip install scrapingbee
 
-card_url = "https://quizlet.com/27462182/econ-unit-1-flash-cards/"
+
+# card_url = "https://quizlet.com/27462182/econ-unit-1-flash-cards/"
 # card_url = "https://www.brainscape.com/flashcards/lecture-22-finishing-cost-curves-and-sta-10180242/packs/17828306"
-# card_url = "https://quizlet.com/201826054/spanish-spanish-flash-cards/"
-
+card_url = "https://quizlet.com/201826054/spanish-spanish-flash-cards/"
 
 text_data_name = "quizlet_page.txt"
 
@@ -30,40 +28,62 @@ def get_data(filename):
     return html_content
 
 def parse_quizlet(card_url):
-    # Precedes every term and definition: <span class="TermText notranslate lang-en">
+    # Precedes every term and definition: <span class="TermText notranslate
     # <br> means new line
-    before_phrase = '<span class="TermText notranslate lang-en">'
+
+    # Pattern of phrases before 
+    before_phrase = '<span class="TermText notranslate'
+    before_char = '>'
+
     after_term_phrase = '</span></a></div></div><div class="SetPageTerm-side SetPageTerm-largeSide">'
     after_term_def = '</span>'
 
-    # html_content = get_data("quizlet_page.txt")
-    html_content = scrape_content(card_url)
-    string_content = html_content.decode('utf-8')
+    # html_content = get_data("quizlet_page.txt") 
+
+    # Get html data from given_url
+    html_content = scrape_content(card_url) 
+
+    # Convert data to string
+    string_content = html_content.decode('utf-8') 
 
     first_index = string_content.find(before_phrase)
     string_content = string_content[first_index:]
 
+    # Store terms and definitions in lists
     terms = []
     definitions = []
 
     loop_index = 0
 
+    # Until the preceding pattern is no longer found
     while (loop_index != -1):
-        term_start = loop_index + len(before_phrase)
+        # Find beginning of term
+        t_phrase_end = loop_index + len(before_phrase)
+        term_start = string_content.find(before_char, t_phrase_end) + 1
+
+        # Find end of term
         term_end = string_content.find(after_term_phrase, term_start)
 
+        # Splice to get term
         term = string_content[term_start:term_end]
         terms.append(term)
         
-        def_start = string_content.find(before_phrase, term_end + len(after_term_phrase)) + len(before_phrase)
+        # Find beginning of definition
+        d_phrase_end = string_content.find(before_phrase, term_end + len(after_term_phrase)) + len(before_phrase)
+        def_start = string_content.find(before_char, d_phrase_end) + 1
+
+        # Find end of definition
         def_end = string_content.find(after_term_def, def_start)
 
+        # Splice to get definition
         definition = string_content[def_start:def_end]
         definitions.append(definition)
 
+        # Preceding pattern
         loop_index = string_content.find(before_phrase, def_end)
 
     return terms, definitions
+
 
 def parse_brain():
 
@@ -75,8 +95,12 @@ def parse_brain():
 # html_content = scrape_content(card_url)
 # store_data(text_data_name, html_content)
 
-terms, definitions = parse_quizlet(card_url)
+# html_content = get_data(text_data_name)
+# html_content = html_content.decode('utf-8')
+# print(html_content)
 
+# Integrate parsing with scraping
+terms, definitions = parse_quizlet(card_url)
 print(terms)
 print(definitions)
 
