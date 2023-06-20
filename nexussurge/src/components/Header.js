@@ -9,6 +9,7 @@ import '../App.css';
 
 export default function Header() {
 
+    {/* figure out how sessions work to do this well */}
     const logged_in = false;
 
     const user = {

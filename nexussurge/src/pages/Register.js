@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Grid, TextField, Button, Typography, Link } from '@mui/material';
 import Header from '../components/Header.js';
+import axios from 'axios';
 
 export function Register() {
   const [username, setUsername] = useState('');
@@ -9,7 +10,26 @@ export function Register() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(`Username: ${username}, Password: ${password}, Confirm Password: ${confirmPassword}`);
+    if (password === confirmPassword) {
+      console.log(`Username: ${username}, Password: ${password}, Confirm Password: ${confirmPassword}`);
+      // Send registration data to Flask backend
+
+      axios.post('http://localhost:5000/add_new_user', {
+        username: username,
+        password_hash: password
+      })
+      .then((response) => {
+        console.log(response);
+        if (response.data === 'success') {
+          window.location.replace('/');
+        }
+      }, (error) => {
+        console.log(error);
+      });
+
+    } else {
+      alert('Passwords do not match');
+    }
   };
 
   return (
