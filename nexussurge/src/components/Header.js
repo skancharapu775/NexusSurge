@@ -9,6 +9,8 @@ import '../App.css';
 
 export default function Header() {
 
+    const logged_in = true;
+
     const user = {
         username: "John Doe",
         usertype: "Student",
@@ -46,32 +48,37 @@ export default function Header() {
                             <Button id="hbtn" sx={{ fontFamily: 'Rubik' }} color='inherit' href='/study'>Study</Button>
                             <Button id="hbtn" sx={{ fontFamily: 'Rubik' }} color='inherit' href='/profile'>Profile</Button>
                         </Stack>
-                        <Stack position='fixed' direction='row' spacing={1} sx={{ ml: '95%' }}> {/* profile button*/}
-                            <Button sx={{ fontFamily: 'Rubik' }} color='inherit' onClick={handleClick}>
-                                <img src={user.profilePicture} alt='Profile' style={{ borderRadius: '50%', width: '30px', height: '30px' }} />
-                            </Button>
-                            <Menu
-                                anchorEl={anchorEl}
-                                open={Boolean(anchorEl)}
-                                onClose={handleClose}
-                                anchorOrigin={{
-                                    vertical: 'bottom',
-                                    horizontal: 'center',
-                                }}
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'center',
-                                }}
-                            >
-                                <Link to='/profile' style={{ textDecoration: 'none', color: 'inherit' }}>
-                                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                                </Link>
-                                {/* needs to be updated when possible */}
-                                <MenuItem onClick={handleClose}>Edit Profile</MenuItem>
-                                <MenuItem onClick={handleClose}>Logout</MenuItem>
-                            </Menu>
-                        </Stack>
-                        
+                        {logged_in ? (
+                            <Stack position='fixed' direction='row' spacing={1} sx={{ ml: '95%' }}> {/* profile button*/}
+                                <Button sx={{ fontFamily: 'Rubik' }} color='inherit' onClick={handleClick}>
+                                    <img src={user.profilePicture} alt='Profile' style={{ borderRadius: '50%', width: '30px', height: '30px' }} />
+                                </Button>
+                                <Menu
+                                    anchorEl={anchorEl}
+                                    open={Boolean(anchorEl)}
+                                    onClose={handleClose}
+                                    anchorOrigin={{
+                                        vertical: 'bottom',
+                                        horizontal: 'center',
+                                    }}
+                                    transformOrigin={{
+                                        vertical: 'top',
+                                        horizontal: 'center',
+                                    }}
+                                >
+                                    <Link to='/profile' style={{ textDecoration: 'none', color: 'inherit' }}>
+                                        <MenuItem onClick={handleClose}>Profile</MenuItem>
+                                    </Link>
+                                    {/* needs to be updated when possible */}
+                                    <MenuItem onClick={handleClose}>Edit Profile</MenuItem>
+                                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                                </Menu>
+                            </Stack>
+                        ) : (
+                            <Stack position='fixed' direction='row' spacing={1} sx={{ ml: '95%' }}>
+                                <Button sx={{ fontFamily: 'Rubik' }} color='inherit' href='/login'>Login</Button>
+                            </Stack>
+                        )}
                     </Toolbar></div>
                 </AppBar>
                 
