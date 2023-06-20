@@ -1,6 +1,7 @@
 from flask import Flask, redirect, url_for, request, session
 from flask_cors import CORS
 from datetime import timedelta
+import sqlite3
 import json
 
 app = Flask(__name__)
@@ -93,6 +94,37 @@ def intialize_user():
                 return True
             else:
                 return False
+
+@app.route('/add_new_user', methods=['GET', 'POST'])
+def add_new_user():
+    if request.method == "POST":
+        data = request.form
+        username = data["username"]
+        password_hash = data["password_hash"]
+        confirm_password_hash = data["confirm_password_hash"]
+        try:
+            sqliteConnection = sqlite3.connect('login_DB.db')
+            cursor = sqliteConnection.cursor()
+            print("Successfully Connected to SQLite")
+            print(f"username: {username}")
+            print(f"password_hash: {password_hash}")
+
+            cursor.execute("INSERT INTO USERS (username, password_hash) VALUES (?, ?)", (username, password_hash))
+            sqliteConnection.commit()
+            print("Record inserted successfully into USERS table ", cursor.rowcount)
+            cursor.close()
+
+        #except sqlite3.Error as error:
+            #print("Failed to insert data into sqlite table", error)
+        finally:
+            if sqliteConnection:
+                sqliteConnection.close()
+                print("The SQLite connection is closed")
+
+        return redirect("/")
+    else:
+        return redirect("/")
+
 
 if __name__ == '__main__':
     app.run(debug=True)

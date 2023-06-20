@@ -9,7 +9,7 @@ import '../App.css';
 
 export default function Header() {
 
-    const logged_in = true;
+    const logged_in = false;
 
     const user = {
         username: "John Doe",

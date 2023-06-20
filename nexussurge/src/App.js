@@ -8,6 +8,8 @@ import { About } from './pages/About.js';
 import { Sets } from './pages/Sets.js';
 import { Study } from './pages/Study.js';
 import { Profile } from './pages/Profile.js';
+import { Register } from './pages/Register.js';
+import { Login } from './pages/Login.js';
 
 function App() {
 
@@ -23,6 +25,8 @@ function App() {
           <Route path="sets" element={<Sets />} />
           <Route path="study" element={<Study />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="register" element={<Register />} />
+          <Route path="login" element={<Login />} />
 
         </Routes>
       </BrowserRouter>
