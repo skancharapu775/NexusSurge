@@ -76,7 +76,7 @@ export default function Header() {
                                 </Menu>
                             </Stack>
                         ) : (
-                            <Stack position='fixed' direction='row' spacing={1} sx={{ ml: '95%' }}>
+                            <Stack position='fixed' direction='row' spacing={1} sx={{ ml: '92.5%' }}>
                                 <Button sx={{ fontFamily: 'Rubik' }} color='inherit' href='/login'>Login</Button>
                             </Stack>
                         )}
