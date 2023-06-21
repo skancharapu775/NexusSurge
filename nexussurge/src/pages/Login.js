@@ -11,6 +11,12 @@ export function Login() {
     console.log(`Username: ${username}, Password: ${password}`);
   };
 
+  const scolor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
+  const fcolor = getComputedStyle(document.documentElement).getPropertyValue('--font-color');
+  const bcolor = getComputedStyle(document.documentElement).getPropertyValue('--base-color');
+  const sbcolor = getComputedStyle(document.documentElement).getPropertyValue('--box-color');
+  const btcolor = getComputedStyle(document.documentElement).getPropertyValue('--button-color');
+
   return (
     <>
     <Header />
@@ -63,7 +69,7 @@ export function Login() {
             variant="contained"
             color="primary"
             type="submit"
-            style={{ marginTop: '16px', backgroundColor: '#252437' }}
+            style={{ marginTop: '16px', color:fcolor, backgroundColor: btcolor }}
           >
             Login
           </Button>

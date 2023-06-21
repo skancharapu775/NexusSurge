@@ -164,8 +164,8 @@ export function Sets() {
                     <Typography component="h1" variant="h2" align="center" color="fcolor" gutterBottom fontFamily={'Rubik'} style={{ marginTop: '20px' }}>
                         Database
                     </Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '70vh', marginTop: '5px' }}>
-                        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '75%', height: '8.1vh', marginBottom: '21px', backgroundColor: fcolor }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '70vh', marginTop: '3vh' }}>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '75%', height: '8.1vh', marginBottom: '2vh', backgroundColor: fcolor }}>
                             <TextField id="outlined-basic" label="Search for Sets and Worksheets" variant="outlined" backgroundColor="fcolor" sx={{ color: "fcolor", width: '103%', height: '103%', input: { color: bcolor } , backgroundColor: fcolor}} />
                         </Box>
                         <Box sx={{ display: 'flex', flexDirection: 'row', width: '70%', height: '14vh', padding: '2vh', border: '2px solid black', marginBottom: '1vh', marginTop: '20px', backgroundColor: scolor}}>
