@@ -4,6 +4,13 @@ import Header from '../components/Header.js';
 import '../App.css';
 
 export function Study() {
+
+  const scolor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
+  const fcolor = getComputedStyle(document.documentElement).getPropertyValue('--font-color');
+  const bcolor = getComputedStyle(document.documentElement).getPropertyValue('--base-color');
+  const sbcolor = getComputedStyle(document.documentElement).getPropertyValue('--box-color');
+  const btcolor = getComputedStyle(document.documentElement).getPropertyValue('--button-color');
+
   const studySets = [
     {
         title: "Test Set 1 - Personal",
@@ -182,6 +189,7 @@ export function Study() {
                       display: 'flex',
                       flexDirection: 'column',
                       fontFamily: 'Rubik',
+                      backgroundColor: scolor
                     }}
                   >
                     <Typography variant="subtitle1" gutterBottom sx={{ fontFamily: 'Rubik', textAlign: 'center' }}>
@@ -191,7 +199,7 @@ export function Study() {
                       {set.num_cards} cards
                     </Typography>
                     <Box sx={{ flexGrow: 1 }} />
-                    <Button variant="contained">Study</Button>
+                    <Button variant="contained" sx = { { backgroundColor: btcolor } }>Study</Button>
                   </Box>
                 </Grid>
               ))}
@@ -228,6 +236,9 @@ export function Study() {
                         flexDirection: 'row',
                         fontFamily: 'Rubik',
                         alignItems: 'center',
+                        backgroundColor: scolor,
+                        marginLeft: '4vh',
+                        marginRight: '4vh'
                       }}
                     >
                       <Box sx={{ flexGrow: 1 }}>
@@ -238,7 +249,7 @@ export function Study() {
                           {worksheet.num_problems} problems
                         </Typography>
                       </Box>
-                      <Button variant="outlined" sx={{ marginLeft: 'auto', '&:hover': { backgroundColor: 'primary.main', color: 'white' } }}>Download</Button>
+                      <Button variant="contained" sx={{ backgroundColor: btcolor, marginLeft: 'auto', '&:hover': { backgroundColor: 'primary.main', color: fcolor } }}>Download</Button>
                     </Box>
                   </Grid>
                 ))}

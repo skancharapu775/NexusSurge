@@ -1,7 +1,9 @@
 :root {
   --base-color: rgb(25, 24, 37);
-  --font-color: rgb(195, 200, 255);
-  --secondary-color: rgb(53, 50, 77);
+  --font-color: rgb(202, 207, 255);
+  --secondary-color: rgb(76, 72, 107);
+  --box-color: rgb(40, 39, 52);
+  --button-color: rgb(57, 31, 101);
 }
 .App {
   text-align: center;
@@ -22,7 +24,7 @@
 }
 #searchbar {
   height:1px;
-  color:var(--base-color);
+  color:var(--font-color);
 }
 .App-header {
   background-color: #282c34;

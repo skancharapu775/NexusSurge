@@ -10,7 +10,10 @@ export default function SideDrawer({ sets }) {
   );
   const scolor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
   const fcolor = getComputedStyle(document.documentElement).getPropertyValue('--font-color');
-  // const bcolor = getComputedStyle(document.documentElement).getPropertyValue('--base-color');
+  const bcolor = getComputedStyle(document.documentElement).getPropertyValue('--base-color');
+  const sbcolor = getComputedStyle(document.documentElement).getPropertyValue('--box-color');
+  const btcolor = getComputedStyle(document.documentElement).getPropertyValue('--button-color');
+
   return (
     <Drawer
       sx={{ 
@@ -23,7 +26,7 @@ export default function SideDrawer({ sets }) {
           paddingLeft: '16px',
           overflowY: 'scroll', // Enable scrolling
           '-ms-overflow-style': 'none', // Hide scrollbar, edge
-          backgroundColor: scolor,
+          backgroundColor: sbcolor,
           '&::-webkit-scrollbar': {
             display: 'none', // Hide scrollbar, chrome
           },
@@ -32,8 +35,8 @@ export default function SideDrawer({ sets }) {
       }}
       variant="permanent"
       anchor="left">
-      <Box sx={{ p: 2, backgroundColor: scolor }}>
-        <Typography color={fcolor} variant="h6" sx = {{ fontFamily: 'Rubik', backgroundColor: scolor }}>
+      <Box sx={{ p: 2, backgroundColor: sbcolor }}>
+        <Typography color={fcolor} variant="h6" sx = {{ fontFamily: 'Rubik', backgroundColor: sbcolor }}>
           Choose Database Set
         </Typography>
         <TextField
@@ -45,23 +48,23 @@ export default function SideDrawer({ sets }) {
         />
       </Box>
       <Divider />
-      <Typography color={fcolor} variant="h6" sx={{ p: 2, fontFamily: 'Rubik', backgroundColor: scolor }} >
+      <Typography color={fcolor} variant="h6" sx={{ p: 2, fontFamily: 'Rubik', backgroundColor: sbcolor }} >
         Choose Personal Set
         </Typography>
         <Divider />
-      <Stack spacing={2} sx={{ p: 2, paddingBottom: '75px', backgroundColor: scolor }}>
+      <Stack spacing={2} sx={{ p: 2, paddingBottom: '75px', backgroundColor: sbcolor }}>
         {filteredSets.map((set) => (
-          <Card key={set.id} sx={{backgroundColor: fcolor}}>
+          <Card key={set.id} sx={{backgroundColor: scolor}}>
             <CardContent>
-              <Typography variant="h6" component="div" sx = {{ fontFamily: 'Rubik' }}>
+              <Typography color={fcolor} variant="h6" component="div" sx = {{ fontFamily: 'Rubik', backgroundcolor: fcolor }}>
                 {set.title}
               </Typography>
-              <Typography variant="body2" color="text.secondary" sx = {{ fontFamily: 'Rubik' }}>
+              <Typography color={fcolor} variant="body2" sx = {{ fontFamily: 'Rubik' }}>
                 {set.description}
               </Typography>
             </CardContent>
             <CardActions>
-              <Button id="setbutton" variant="contained" color="success" size="small" sx = {{ fontFamily: 'Rubik', backgroundColor: scolor }}>Select</Button>
+              <Button id="setbutton" variant="contained" color="secondary" size="small" sx = {{ fontFamily: 'Rubik' , backgroundColor: btcolor , color: fcolor}}>Select</Button>
             </CardActions>
           </Card>
         ))}
