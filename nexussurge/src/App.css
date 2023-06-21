@@ -24,7 +24,7 @@
 }
 #searchbar {
   height:1px;
-  color:var(--font-color);
+  color:var(--base-color);
 }
 .App-header {
   background-color: #282c34;

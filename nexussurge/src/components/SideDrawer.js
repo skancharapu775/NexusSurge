@@ -12,7 +12,7 @@ export default function SideDrawer({ sets }) {
   const fcolor = getComputedStyle(document.documentElement).getPropertyValue('--font-color');
   const bcolor = getComputedStyle(document.documentElement).getPropertyValue('--base-color');
   const sbcolor = getComputedStyle(document.documentElement).getPropertyValue('--box-color');
-  const btcolor = getComputedStyle(document.documentElement).getPropertyValue('--button-color');
+  const btcolor = getComputedStyle(document.documentElement).getPropertyValue('--button-color'); 
 
   return (
     <Drawer
@@ -41,10 +41,9 @@ export default function SideDrawer({ sets }) {
         </Typography>
         <TextField
           id="searchbar"
-          sx = {{ fontFamily: 'Rubik', backgroundColor: fcolor, borderRadius: '8px', mt: '.5vh'}}
+          sx = {{ fontFamily: 'Rubik', backgroundColor: fcolor, borderRadius: '8px', mt: '.5vh', input: { color: bcolor }}}
           value={searchText}
           onChange={(event) => setSearchText(event.target.value)}
-          
         />
       </Box>
       <Divider />

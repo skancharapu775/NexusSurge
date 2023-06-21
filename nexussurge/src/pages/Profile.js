@@ -10,13 +10,17 @@ const user = {
     studySets: ['Algebra 1', 'Spanish 2', 'English 2', 'Physics 2', 'American History']
 }
 
+const sbcolor = getComputedStyle(document.documentElement).getPropertyValue('--box-color');
+const scolor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
+const fcolor = getComputedStyle(document.documentElement).getPropertyValue('--font-color');
+
 export function Profile() {
   return (
     <>
         <Header />
         {/* two separated sections */}
-        <div className="body-content" style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Box sx={{ width: '100%', maxWidth: '80vw', bgcolor: 'background.paper' }}>
+        <div className="body-content" style={{ display: 'flex', justifyContent: 'space-between' , backgroundColor:sbcolor}}>
+            <Box sx={{ width: '100%', maxWidth: '80vw', bgcolor: sbcolor, backgroundColor: sbcolor }}>
                 <Box sx={{ my: 5, mx: 2 }}>
                 <Grid container justifyContent="center" sx={{ mb: 2, my: 2 }}>
                     <Grid item xs={1}>
@@ -42,12 +46,12 @@ export function Profile() {
                     </Grid>
                     </Grid>
                     <Box ml={2}>
-                        <Typography color="text.secondary" variant="body2" sx={{ fontFamily: 'Rubik', mb: 2 }}>
+                        <Typography color="text.secondary" variant="body2" sx={{ fontFamily: 'Rubik', mb: 2, color: fcolor }}>
                             {user.description}
                         </Typography>
                     </Box>
                 </Box>
-                <Divider variant="middle" />
+                <Divider variant="middle" sx={{ bgcolor: fcolor }}/>
                 <Box sx={{ m: 2 }}>
                     <Typography gutterBottom variant="body1" sx={{ fontFamily: 'Rubik', mb: 2 }}>
                         Study Sets
@@ -55,7 +59,7 @@ export function Profile() {
                     <Stack direction="row" spacing={1}>
                         {/* map chips to study sets */}
                         {user.studySets.map((studySet) => (
-                            <Chip label={studySet} />
+                            <Chip label={studySet} sx = { { backgroundColor: scolor, color: fcolor} } />
                         ))}
                     </Stack>
                 </Box>

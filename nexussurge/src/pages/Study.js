@@ -167,10 +167,10 @@ export function Study() {
           </Typography>
           <Box sx={{ p: 2 }}>
             <TextField
-              label="Search"
-              variant="outlined"
+              label="Search Your Sets"
               fullWidth
               margin="normal"
+              sx = {{ fontFamily: 'Rubik', backgroundColor: fcolor }}
             />
             <Typography variant="h5" sx={{ p: 2, fontFamily: 'Rubik', paddingBottom: 2, textAlign: 'center' }}>
               Your Sets
@@ -207,16 +207,16 @@ export function Study() {
             </Box>
           </Box>
         </Box>
-        <Box sx={{ width: '50%', height: '100%', fontFamily: 'Rubik, sans-serif', marginTop:'25px'}}>
+        <Box sx={{ width: '50%', height: '100%', fontFamily: 'Rubik, sans-serif', marginTop:'25px' }}>
           <Typography variant="h3" sx={{ p: 2, fontFamily: 'Rubik', paddingBottom: 0, textAlign: 'center' }}>
             Worksheets
           </Typography>
           <Box sx={{ p: 2 }}>
-            <TextField
-              label="Search"
-              variant="outlined"
+          <TextField
+              label="Search Your Sets"
               fullWidth
               margin="normal"
+              sx = { { fontFamily: 'Rubik', backgroundColor: fcolor } }
             />
             <Typography variant="h5" sx={{ p: 2, fontFamily: 'Rubik', paddingBottom: 2, textAlign: 'center' }}>
               Your Worksheets
@@ -224,9 +224,9 @@ export function Study() {
             <Box sx={{ overflowY: 'scroll', maxHeight: '60vh' }}>
               <Grid container spacing={2}>
                 {worksheets.map((worksheet) => (
-                  <Grid sx={{ marginBottom: '2rem' }} item xs={12} key={worksheet.id}>
+                  <Grid sx={{ marginBottom: '2rem' }} item xs={6} key={worksheet.id}>
                     <Box
-                      sx={{
+                      sx={ {
                         p: 2,
                         border: 1,
                         borderColor: 'divider',
