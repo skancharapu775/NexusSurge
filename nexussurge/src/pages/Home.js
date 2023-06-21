@@ -7,6 +7,10 @@ import '../App.css';
 
 export function Home() {
 
+  const scolor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
+  const fcolor = getComputedStyle(document.documentElement).getPropertyValue('--font-color');
+  const bcolor = getComputedStyle(document.documentElement).getPropertyValue('--base-color');
+
     /* Example API result from my sets */
   const test_user_sets_result = [
     {
@@ -124,12 +128,12 @@ export function Home() {
                 {card_data_example.map((card, index) => (
                     <Grid item xs={4} key={index}>
                     <a href={card.link} className='card-link'>
-                        <Card className='center-card' sx={{ minHeight: '150px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out', '&:hover': { transform: 'translateY(-5px)', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)' } }} onClick={() => window.location.href=card.link}>
+                        <Card className='center-card' sx={{ minHeight: '150px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out', '&:hover': { transform: 'translateY(-5px)', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)' , backgroundColor: scolor } , backgroundColor: scolor}} onClick={() => window.location.href=card.link}>
                         <CardContent className='card-content'>
-                            <Typography variant="h5" component="h2" d sx = {{ fontFamily: 'Rubik' }}>
+                            <Typography color={fcolor} variant="h5" component="h2" d sx = {{ fontFamily: 'Rubik' }}>
                             {card.title}
                             </Typography>
-                            <Typography color="textSecondary" sx = {{ fontFamily: 'Rubik' }}>
+                            <Typography color={fcolor} sx = {{ fontFamily: 'Rubik' }}>
                             {card.description}
                             </Typography>
                         </CardContent>
