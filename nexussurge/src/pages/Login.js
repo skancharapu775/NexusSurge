@@ -26,15 +26,17 @@ export function Login() {
       }}
     >
       <Grid item xs={12} sm={6} md={4}>
-        <form
-          onSubmit={handleSubmit}
-          style={{
-            backgroundColor: 'white',
-            padding: '24px',
-            borderRadius: '4px',
-            boxShadow: '0px 3px 15px rgba(0, 0, 0, 0.2)',
-          }}
-        >
+          <form
+            onSubmit={handleSubmit}
+            style={{
+              backgroundColor: 'rgb(195, 200, 255)',
+              color: '#252437',
+              padding: '24px',
+              borderRadius: '4px',
+              border: '5px solid rgb(50, 47, 73)',
+              boxShadow: '0px 3px 15px rgba(0, 0, 0, 0.2)',
+            }}
+          >
           <Typography variant="h4" style={{ marginBottom: '16px' }}>
             Login
           </Typography>
@@ -44,7 +46,7 @@ export function Login() {
             fullWidth
             value={username}
             onChange={(event) => setUsername(event.target.value)}
-            style={{ marginBottom: '16px', backgroundColor: 'white' }}
+            style={{ marginBottom: '16px', backgroundColor: 'rgb(195, 200, 255)' }}
             required
           />
           <TextField
@@ -54,19 +56,19 @@ export function Login() {
             type="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
-            style={{ marginBottom: '16px', backgroundColor: 'white' }}
+            style={{ marginBottom: '16px', backgroundColor: 'rgb(195, 200, 255)' }}
             required
           />
           <Button
             variant="contained"
             color="primary"
             type="submit"
-            style={{ marginTop: '16px' }}
+            style={{ marginTop: '16px', backgroundColor: '#252437' }}
           >
             Login
           </Button>
           <Typography variant="body1" style={{ marginTop: '16px' }}>
-            Don't have an account? <Link href="/register">Register</Link>
+            Don't have an account? <Link href="/register" color={ '#252437' }>Register</Link>
           </Typography>
         </form>
       </Grid>

@@ -50,13 +50,14 @@ export function Register() {
         <form
           onSubmit={handleSubmit}
           style={{
-            backgroundColor: 'white',
+            backgroundColor: 'rgb(195, 200, 255)',
             padding: '24px',
             borderRadius: '4px',
+            border: '5px solid rgb(50, 47, 73)',
             boxShadow: '0px 3px 15px rgba(0, 0, 0, 0.2)',
           }}
         >
-          <Typography variant="h4" style={{ marginBottom: '16px' }}>
+          <Typography variant="h4" style={{ marginBottom: '16px', color: '#252437' }}>
             Register
           </Typography>
           <TextField
@@ -65,7 +66,7 @@ export function Register() {
             fullWidth
             value={username}
             onChange={(event) => setUsername(event.target.value)}
-            style={{ marginBottom: '16px', backgroundColor: 'white' }}
+            style={{ marginBottom: '16px', backgroundColor: 'rgb(195, 200, 255)' }}
             required
           />
           <TextField
@@ -75,7 +76,7 @@ export function Register() {
             type="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
-            style={{ marginBottom: '16px', backgroundColor: 'white' }}
+            style={{ marginBottom: '16px', backgroundColor: 'rgb(195, 200, 255)' }}
             required
           />
           <TextField
@@ -85,19 +86,19 @@ export function Register() {
             type="password"
             value={confirmPassword}
             onChange={(event) => setConfirmPassword(event.target.value)}
-            style={{ marginBottom: '16px', backgroundColor: 'white' }}
+            style={{ marginBottom: '16px', backgroundColor: 'rgb(195, 200, 255)' }}
             required
           />
           <Button
             variant="contained"
             color="primary"
             type="submit"
-            style={{ marginTop: '16px' }}
+            style={{ marginTop: '16px', backgroundColor: '#252437' }}
           >
             Register
           </Button>
-          <Typography variant="body1" style={{ marginTop: '16px' }}>
-            Already have an account? <Link href="/login">Login</Link>
+          <Typography variant="body1" style={{ marginTop: '16px', color: '#252437' }}>
+            Already have an account? <Link href="/login" color= '#252437'>Login</Link>
           </Typography>
         </form>
       </Grid>
