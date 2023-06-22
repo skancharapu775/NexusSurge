@@ -10,6 +10,7 @@ export function Home() {
   const scolor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
   const fcolor = getComputedStyle(document.documentElement).getPropertyValue('--font-color');
   const bcolor = getComputedStyle(document.documentElement).getPropertyValue('--base-color');
+  const btcolor = getComputedStyle(document.documentElement).getPropertyValue('--button-color');
 
     /* Example API result from my sets */
   const test_user_sets_result = [
@@ -145,8 +146,8 @@ export function Home() {
             </Box>
             <Box sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1, paddingBottom: '8vw', paddingRight: '6vw', alignItems: 'center', justifyContent: 'center'}}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <Button variant="contained" color="primary" size="large" sx={{ m: 3, fontSize: 20, padding: '16px', fontFamily: 'Rubik' }}>Create Party</Button>
-                    <Button variant="contained" color="secondary" size="large" sx={{ m: 3, fontSize: 20, padding: '16px', fontFamily: 'Rubik' }}>Custom Settings</Button>
+                    <Button variant="contained" size="large" sx={{ m: 3, fontSize: 20, padding: '16px', fontFamily: 'Rubik' , color:fcolor, backgroundColor:btcolor }}>Create Party</Button>
+                    <Button variant="contained" size="large" sx={{ m: 3, fontSize: 20, padding: '16px', fontFamily: 'Rubik', color:fcolor, backgroundColor:btcolor }}>Custom Settings</Button>
                 </Box>
             </Box>
         </Box>

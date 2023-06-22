@@ -22,6 +22,8 @@ export default function Header() {
     const bcolor = getComputedStyle(document.documentElement).getPropertyValue('--base-color');
     const fcolor = getComputedStyle(document.documentElement).getPropertyValue('--font-color');
     const scolor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
+    const tbcolor = getComputedStyle(document.documentElement).getPropertyValue('--toolbar-color');
+
     const [anchorEl, setAnchorEl] = useState(null);
 
     const handleClick = (event) => {
@@ -36,7 +38,7 @@ export default function Header() {
         <Box sx={{ flexGrow: 1}}>
             <div>
                 <AppBar id="hd"sx={{backgroundColor:bcolor, color:fcolor}}>
-                    <div><Toolbar sx={{borderBottom: '2px solid ' + scolor }}>
+                    <div><Toolbar sx={{borderBottom: '2px solid ' + tbcolor }}>
                         <IconButton sx={{ position:'fixed' }}size='large' edge='start' color='inherit' aria-label='logo.svg'>
                             <SchoolIcon href="/home" />
                         </IconButton>

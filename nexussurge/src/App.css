@@ -4,6 +4,7 @@
   --secondary-color: rgb(76, 72, 107);
   --box-color: rgb(40, 39, 52);
   --button-color: rgb(57, 31, 101);
+  --toolbar-color: rgb(86, 76, 180);
 }
 .App {
   text-align: center;

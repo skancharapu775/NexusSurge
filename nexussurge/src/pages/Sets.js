@@ -168,7 +168,7 @@ export function Sets() {
                         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '75%', height: '8.1vh', marginBottom: '2vh', backgroundColor: fcolor }}>
                             <TextField id="outlined-basic" label="Search for Sets and Worksheets" variant="outlined" backgroundColor="fcolor" sx={{ color: "fcolor", width: '103%', height: '103%', input: { color: bcolor } , backgroundColor: fcolor}} />
                         </Box>
-                        <Box sx={{ display: 'flex', flexDirection: 'row', width: '70%', height: '14vh', padding: '2vh', border: '2px solid black', marginBottom: '1vh', marginTop: '20px', backgroundColor: scolor}}>
+                        <Box sx={{ display: 'flex', flexDirection: 'row', width: '70%', height: '14vh', padding: '2vh', border: '2px solid black', marginBottom: '1vh', marginTop: '2vh', backgroundColor: scolor}}>
                                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                                     <Typography variant="h6">Search for flashcard sets and worksheets made by other users!</Typography>
                                 </Box>

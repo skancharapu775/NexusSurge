@@ -1,6 +1,6 @@
 import '../App.css';
 import React, { useState } from 'react';
-import { Drawer, Typography, Stack, Card, CardContent, CardActions, Divider, Button, Box, TextField } from '@mui/material';
+import { Drawer, Typography, Stack, Card, CardContent, CardActions, Divider, Button, Box, TextField, Toolbar } from '@mui/material';
 
 export default function SideDrawer({ sets }) {
   const [searchText, setSearchText] = useState('');
@@ -48,7 +48,7 @@ export default function SideDrawer({ sets }) {
       </Box>
       <Divider />
       <Typography color={fcolor} variant="h6" sx={{ p: 2, fontFamily: 'Rubik', backgroundColor: sbcolor }} >
-        Choose Personal Set
+        Choose Recent Set
         </Typography>
         <Divider />
       <Stack spacing={2} sx={{ p: 2, paddingBottom: '75px', backgroundColor: sbcolor }}>
