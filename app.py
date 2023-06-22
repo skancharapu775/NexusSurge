@@ -36,7 +36,6 @@ def home ():
     if request.method == 'POST':
         return 
     else:
-        logged_in = intialize_user()
         return 
     
 # study materials
@@ -46,7 +45,6 @@ def sets():
     if request.method == "POST":
         return    
     else:
-        logged_in = intialize_user()
         return 
 
 # individual study option
@@ -56,7 +54,6 @@ def study():
     if request.method == "POST":
         return 
     else:
-        logged_in = intialize_user()
         return 
 
 @app.route('/profile', methods=['GET', 'POST'])
@@ -65,10 +62,7 @@ def profile():
     if request.method == "POST":
         return 
     else:
-        logged_in = intialize_user()
-
-        if not logged_in:
-            return redirect(url_for('login'))
+        return
         
     
 @app.route('/login', methods=['GET', 'POST'])
@@ -78,22 +72,6 @@ def login():
         return 
     else:
         return 
-
-def intialize_user():
-    # Run following on every get request
-        if 'status' not in session:
-            session.permanent = True
-            session['status'] = 'active'
-
-        if 'first_entry' not in session:
-            # First page
-            session['first_entry'] = False
-            # Pull data from database and add to session
-        else:
-            if 'logged_in' in session:
-                return True
-            else:
-                return False
 
 @app.route('/add_new_user', methods=['GET', 'POST'])
 def add_new_user():
