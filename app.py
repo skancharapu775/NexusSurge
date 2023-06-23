@@ -34,44 +34,65 @@ def redirect ():
 def home ():
 
     if request.method == 'POST':
+        # possiblities: two buttons, search database, import set, press on game
         return 
     else:
-        return 
+        if 'active' in session:
+            # pull recent sets from session
+            return # logged_in, send recent sets
+        else:
+            return # not_logged_in, send popular sets
     
 # study materials
 @app.route('/sets', methods=['GET', 'POST'])
 def sets():
 
     if request.method == "POST":
+        # possiblities: game buttons on recent sets, search database, import section
         return    
     else:
-        return 
+
+        if 'active' in session:
+            # pull recent sets from session
+            return # logged_in, send recent sets
+        else:
+            return # not logged_in, send popular sets
 
 # individual study option
 @app.route('/study', methods=['GET', 'POST'])
 def study():
 
     if request.method == "POST":
+        # set search bar, sheet search bar, study buttons on sets and materials
         return 
     else:
-        return 
+        if 'active' in session:
+            # pull recent sets and study materials from session
+            return # return sets and study materials
+        else:
+            return redirect(url_for('login')) # ideally hide study in header
 
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
 
     if request.method == "POST":
+        # possiblities: press on pill ui sets, edit profile
         return 
     else:
-        return
+        if 'active' in session:
+            # pull profile data from database
+            # add session
+            return # profile data
+        else:  
+            return redirect('/')
         
     
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 
     if request.method == "POST":
-        return 
-    else:
-        return 
+        # pull session data from database
+        return redirect(url_for('home'))
 
 @app.route('/add_new_user', methods=['GET', 'POST'])
 def add_new_user():
