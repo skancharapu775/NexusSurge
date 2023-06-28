@@ -4,7 +4,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { IconButton } from '@mui/material';
-import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
+import { ArrowBackIos, ArrowForwardIos, SwapHoriz } from '@mui/icons-material';
+import Button from '@mui/material/Button';
 import '../App.js';
 
 export function Cards() {
@@ -47,6 +48,10 @@ export function Cards() {
         setShowDefinition(false);
     }
 
+    const handleSwapClick = () => {
+        setShowDefinition(!showDefinition);
+    }
+
   return (
     <>
         <Header />
@@ -65,9 +70,15 @@ export function Cards() {
                 <IconButton color="primary" onClick={handleNextClick}>
                     <ArrowForwardIos />
                 </IconButton>
+                <IconButton color="primary" onClick={handleSwapClick}>
+                    <SwapHoriz />
+                </IconButton>
             </div>
+            <Button variant="outlined" color="primary" style={{ borderRadius: '10px', border: '2px solid', padding: '10px 20px', fontSize: '20px', position: 'absolute', top: '15vh', right: '17vw', width: '200px' }}>Flashcards</Button>
+            <Button variant="outlined" color="primary" style={{ borderRadius: '10px', border: '2px solid', padding: '10px 20px', fontSize: '20px', position: 'absolute', top: '35vh', right: '18.75vw', width: '100px' }}>Learn</Button>
+            <Button variant="outlined" color="primary" style={{ borderRadius: '10px', border: '2px solid', padding: '10px 20px', fontSize: '20px', position: 'absolute', top: '55vh', right: '18.75vw', width: '100px' }}>Test</Button>
+            <Button variant="contained" color="success" style={{ position: 'absolute', top: '72.5vh', right: '18vw', width: '120px', height: '60px' }}>Join Game</Button>
         </div>
-
     </>
   );
 }
