@@ -7,6 +7,7 @@ import { IconButton } from '@mui/material';
 import { ArrowBackIos, ArrowForwardIos, SwapHoriz } from '@mui/icons-material';
 import Button from '@mui/material/Button';
 import '../App.js';
+import { useSpring, animated } from 'react-spring';
 
 export function Cards() {
     
@@ -48,29 +49,28 @@ export function Cards() {
         setShowDefinition(false);
     }
 
-    const handleSwapClick = () => {
-        setShowDefinition(!showDefinition);
-    }
+    const { transform } = useSpring({
+        transform: `perspective(4000px) rotateY(${showDefinition ? 180 : 0}deg)`,
+    });
 
   return (
     <>
         <Header />
         <div id="card-container" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', flexDirection: 'column', marginLeft: '-30vw'}}>
-            <Card className="card" style={{width: '40%', height: '600px', transformOrigin: 'center'}} onClick={handleClick}>
+            <animated.div className="card" style={{width: '40%', height: '600px', transformOrigin: 'center', transform, backgroundColor: 'white'}} onClick={handleClick}>
                 <CardContent style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%'}}>
                     <Typography style={{fontSize: 36, fontWeight: 'bold', marginBottom: '20px', textAlign: 'center'}} color="textPrimary" gutterBottom>
                         {showDefinition ? example_flashcards[currentIndex].definition : example_flashcards[currentIndex].term}
                     </Typography>
                 </CardContent>
-            </Card>
+            </animated.div>
             <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px'}}>
                 <IconButton color="primary" onClick={handlePrevClick}>
                     <ArrowBackIos />
                 </IconButton>
                 <IconButton color="primary" onClick={handleNextClick}>
-                    <ArrowForwardIos />
                 </IconButton>
-                <IconButton color="primary" onClick={handleSwapClick}>
+                <IconButton color="primary" onClick={handleClick}>
                     <SwapHoriz />
                 </IconButton>
             </div>

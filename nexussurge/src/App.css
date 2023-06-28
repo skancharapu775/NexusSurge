@@ -160,3 +160,6 @@
   text-decoration: none;
 }
 
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
