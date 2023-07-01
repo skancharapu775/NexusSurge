@@ -159,7 +159,7 @@ export function Sets() {
                         ))}
                     </Box>
                 </Box>
-                <Box sx={{ width: '1px', height: '80vh', backgroundColor: fcolor }} />
+                {/* <Box sx={{ width: '1px', height: '80vh', backgroundColor: fcolor }} /> */}
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '30vw', height: '80vh', backgroundColor: sbcolor, borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)' }}>
                     <Typography component="h1" variant="h2" align="center" color="fcolor" gutterBottom fontFamily={'Rubik'} style={{ marginTop: '20px' }}>
                         Database
@@ -175,7 +175,7 @@ export function Sets() {
                         </Box>
                     </Box>
                 </Box>
-                <Box sx={{ width: '1px', height: '80vh', backgroundColor: fcolor }} />
+                {/* <Box sx={{ width: '1px', height: '80vh', backgroundColor: fcolor }} /> */}
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '30vw', height: '80vh', backgroundColor: sbcolor, borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)' }}>
                     <Typography component="h1" variant="h2" align="center" color="fcolor" gutterBottom fontFamily={'Rubik'} style={{ marginTop: '20px' }}>
                         Trending Sets

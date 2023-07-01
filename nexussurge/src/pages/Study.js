@@ -178,7 +178,7 @@ export function Study() {
             <Box sx={{ overflowY: 'scroll', maxHeight: '60vh' }}>
             <Grid container spacing={2}>
               {studySets.map((set) => (
-                <Grid sx = {{marginBottom: '2rem'}} item xs={12} sm={6} md={4} key={set.name}>
+                <Grid sx = {{marginBottom: '2rem'}} item xs={12} key={set.name}>
                   <Box
                     sx={{
                       p: 2,
@@ -187,19 +187,27 @@ export function Study() {
                       borderRadius: 1,
                       height: '100%',
                       display: 'flex',
-                      flexDirection: 'column',
+                      flexDirection: 'row',
                       fontFamily: 'Rubik',
-                      backgroundColor: scolor
+                      backgroundColor: scolor,
+                      marginLeft: '5vh',
+                      marginRight: '5vh'
                     }}
                   >
-                    <Typography variant="subtitle1" gutterBottom sx={{ fontFamily: 'Rubik', textAlign: 'center' }}>
+
+                    <Box sx={{ flexGrow: 1, width: '50vh', marginBottom: '-5vh' }}>  
+                    <Typography variant="h4" gutterBottom sx={{ fontFamily: 'Rubik', textAlign: 'center' }}>
                       {set.title}
                     </Typography>
                     <Typography variant="body2" gutterBottom sx={{ fontFamily: 'Rubik', textAlign: 'center' }}>
-                      {set.num_cards} cards
+                      {set.num_cards} terms
                     </Typography>
+                    </Box>
+
                     <Box sx={{ flexGrow: 1 }} />
-                    <Button variant="contained" sx = { { backgroundColor: btcolor } }>Study</Button>
+                    <Button variant="contained" sx = { { backgroundColor: btcolor, height: '100%' } }>Study</Button>
+                    <Box sx={{ flexGrow: 1 }} />
+                    <Button variant="contained" sx = { { backgroundColor: btcolor, width: '15%' } }>Join Game</Button>
                   </Box>
                 </Grid>
               ))}
@@ -224,7 +232,7 @@ export function Study() {
             <Box sx={{ overflowY: 'scroll', maxHeight: '60vh' }}>
               <Grid container spacing={2}>
                 {worksheets.map((worksheet) => (
-                  <Grid sx={{ marginBottom: '2rem' }} item xs={6} key={worksheet.id}>
+                  <Grid sx={{ marginBottom: '2rem' }} item xs={12} key={worksheet.id}>
                     <Box
                       sx={ {
                         p: 2,

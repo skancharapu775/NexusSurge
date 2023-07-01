@@ -10,7 +10,7 @@ const user = {
     studySets: ['Algebra 1', 'Spanish 2', 'English 2', 'Physics 2', 'American History']
 }
 
-const sbcolor = getComputedStyle(document.documentElement).getPropertyValue('--box-color');
+const pfcolor = getComputedStyle(document.documentElement).getPropertyValue('--profile-color');
 const scolor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
 const fcolor = getComputedStyle(document.documentElement).getPropertyValue('--font-color');
 
@@ -19,8 +19,8 @@ export function Profile() {
     <>
         <Header />
         {/* two separated sections */}
-        <div className="body-content" style={{ display: 'flex', justifyContent: 'space-between' , backgroundColor:sbcolor}}>
-            <Box sx={{ width: '100%', maxWidth: '80vw', bgcolor: sbcolor, backgroundColor: sbcolor }}>
+        <div className="body-content" style={{ display: 'flex', justifyContent: 'space-between' , backgroundColor:pfcolor}}>
+            <Box sx={{ width: '100%', maxWidth: '80vw', bgcolor: pfcolor, backgroundColor: pfcolor }}>
                 <Box sx={{ my: 5, mx: 2 }}>
                 <Grid container justifyContent="center" sx={{ mb: 2, my: 2 }}>
                     <Grid item xs={1}>
