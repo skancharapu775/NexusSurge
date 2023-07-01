@@ -13,13 +13,14 @@ const user = {
 const pfcolor = getComputedStyle(document.documentElement).getPropertyValue('--profile-color');
 const scolor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
 const fcolor = getComputedStyle(document.documentElement).getPropertyValue('--font-color');
+const bscolor = getComputedStyle(document.documentElement).getPropertyValue('--base-secondary');
 
 export function Profile() {
   return (
     <>
         <Header />
         {/* two separated sections */}
-        <div className="body-content" style={{ display: 'flex', justifyContent: 'space-between' , backgroundColor:pfcolor}}>
+        <div className="body-content" style={{ display: 'flex', justifyContent: 'space-between', backgroundColor: pfcolor }}>
             <Box sx={{ width: '100%', maxWidth: '80vw', bgcolor: pfcolor, backgroundColor: pfcolor }}>
                 <Box sx={{ my: 5, mx: 2 }}>
                 <Grid container justifyContent="center" sx={{ mb: 2, my: 2 }}>

@@ -10,6 +10,8 @@ export function Sets() {
     const bcolor = getComputedStyle(document.documentElement).getPropertyValue('--base-color');
     const sbcolor = getComputedStyle(document.documentElement).getPropertyValue('--box-color');
     const btcolor = getComputedStyle(document.documentElement).getPropertyValue('--button-color');
+    const bscolor = getComputedStyle(document.documentElement).getPropertyValue('--base-secondary');
+
 
     /* Example API result from searching database */
     const test_search_results = [
@@ -144,10 +146,10 @@ export function Sets() {
     return (
         <>
             <Header />
-            <Box sx={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', height: '100vh', marginTop:'25px' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', height: '100vh', marginTop:'25px', backgroundColor: bscolor }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '30vw', height: '80vh', backgroundColor: sbcolor, borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)' }}>
                     <Typography component="h1" variant="h2" align="center" color= "fcolor" gutterBottom fontFamily={'Rubik'} style={{ marginTop: '20px' }}>
-                        Recent Sets
+                        Import Set
                     </Typography>
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '70vh', overflowY: 'scroll', marginTop: '10px' }}>
                         {test_user_sets_result.map((result) => (
@@ -178,7 +180,7 @@ export function Sets() {
                 {/* <Box sx={{ width: '1px', height: '80vh', backgroundColor: fcolor }} /> */}
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '30vw', height: '80vh', backgroundColor: sbcolor, borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)' }}>
                     <Typography component="h1" variant="h2" align="center" color="fcolor" gutterBottom fontFamily={'Rubik'} style={{ marginTop: '20px' }}>
-                        Trending Sets
+                        Create Set
                     </Typography>
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '70vh', overflowY: 'scroll', marginTop: '10px' }}>
                         {test_popular_results.map((result) => (

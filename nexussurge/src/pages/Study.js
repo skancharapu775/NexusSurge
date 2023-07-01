@@ -10,6 +10,7 @@ export function Study() {
   const bcolor = getComputedStyle(document.documentElement).getPropertyValue('--base-color');
   const sbcolor = getComputedStyle(document.documentElement).getPropertyValue('--box-color');
   const btcolor = getComputedStyle(document.documentElement).getPropertyValue('--button-color');
+  const bscolor = getComputedStyle(document.documentElement).getPropertyValue('--base-secondary');
 
   const studySets = [
     {
@@ -160,18 +161,13 @@ export function Study() {
   return (
     <>
       <Header />
-      <Box sx={{ display: 'flex', flexGrow: 1, height: '100%', marginTop: '8vh', fontFamily: 'Rubik, sans-serif' }}>
+      <Box sx={{ display: 'flex', flexGrow: 1, height: '100%', marginTop: '8vh', fontFamily: 'Rubik, sans-serif', backgroundColor: bscolor }}>
         <Box sx={{ width: '50%', borderRight: 1, borderColor: 'divider', height: '100vh', fontFamily: 'Rubik, sans-serif', marginTop:'25px'}}>
           <Typography variant="h3" sx={{ p: 2, fontFamily: 'Rubik', paddingBottom: 0, textAlign: 'center' }}>
             Study Sets
           </Typography>
           <Box sx={{ p: 2 }}>
-            <TextField
-              label="Search Your Sets"
-              fullWidth
-              margin="normal"
-              sx = {{ fontFamily: 'Rubik', backgroundColor: fcolor }}
-            />
+ 
             <Typography variant="h5" sx={{ p: 2, fontFamily: 'Rubik', paddingBottom: 2, textAlign: 'center' }}>
               Your Sets
             </Typography>
@@ -217,22 +213,16 @@ export function Study() {
         </Box>
         <Box sx={{ width: '50%', height: '100%', fontFamily: 'Rubik, sans-serif', marginTop:'25px' }}>
           <Typography variant="h3" sx={{ p: 2, fontFamily: 'Rubik', paddingBottom: 0, textAlign: 'center' }}>
-            Worksheets
+            Tests/Worksheets
           </Typography>
           <Box sx={{ p: 2 }}>
-          <TextField
-              label="Search Your Sets"
-              fullWidth
-              margin="normal"
-              sx = { { fontFamily: 'Rubik', backgroundColor: fcolor } }
-            />
             <Typography variant="h5" sx={{ p: 2, fontFamily: 'Rubik', paddingBottom: 2, textAlign: 'center' }}>
-              Your Worksheets
+              Your Tests/Worksheets
             </Typography>
             <Box sx={{ overflowY: 'scroll', maxHeight: '60vh' }}>
               <Grid container spacing={2}>
                 {worksheets.map((worksheet) => (
-                  <Grid sx={{ marginBottom: '2rem' }} item xs={12} key={worksheet.id}>
+                  <Grid sx={{ marginBottom: '2rem' }} item xs={6} key={worksheet.id}>
                     <Box
                       sx={ {
                         p: 2,
