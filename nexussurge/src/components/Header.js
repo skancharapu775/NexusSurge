@@ -34,6 +34,9 @@ export default function Header() {
         setAnchorEl(null);
     };
 
+    const length = user.username.length;
+    const leftMargin = (164 - 1.1 * length);
+
     return (
         <Box sx={{ flexGrow: 1}}>
             <div>
@@ -52,9 +55,12 @@ export default function Header() {
                             <Button id="hbtn" sx={{ fontFamily: 'Rubik' }} color='inherit' href='/profile'>Profile</Button>
                         </Stack>
                         {logged_in ? (
-                            <Stack position='fixed' direction='row' spacing={1} sx={{ ml: '92.5%' }}> {/* profile button*/}
+                            <Stack position='fixed' direction='row' spacing={1} sx={{ ml: leftMargin }}> {/* profile button*/}
                                 <Button sx={{ fontFamily: 'Rubik' }} color='inherit' onClick={handleClick}>
-                                    <img src={user.profilePicture} alt='Profile' style={{ borderRadius: '50%', width: '30px', height: '30px' }} />
+                                    <Typography color={fcolor} variant="h8" component="div" sx = {{ fontFamily: 'Rubik', backgroundcolor: fcolor }}>
+                                        { user.username }
+                                    </Typography>
+                                    <img src={user.profilePicture} alt='Profile' style={{ borderRadius: '50%', width: '30px', height: '30px', marginLeft: '1vw' }} />
                                 </Button>
                                 <Menu
                                     anchorEl={anchorEl}

@@ -96,9 +96,32 @@ def login():
         
         data = request.form
         username = data['username']
-        session["username"] = username
+        session["user"]["username"] = username
+
+        sqliteConnection = sqlite3.connect('login_DB.db')
+        cursor = sqlite3.connect('nexus_DB.db')
+        # check if username and password are in the database
+        # if so:
+        session["user"]["id"] = "id" # will need for sets table
+        # else: 
+            # return error
+        sqliteConnection.close()
+
 
         sqliteConnection = sqlite3.connect('nexus_DB.db')
+        cursor = sqliteConnection.cursor()
+
+        # Grab session data with executions
+        session["user"]["usertype"] = "usertype"
+        session["user"]["description"] = "description"
+        
+        # Somehow get image from database
+        session["user"]["profile_image"] = "image"
+        
+        # list of set objects, needs to be parsed, including last opened date
+        session["sets"] = []
+
+        sqliteConnection.close()
 
         return redirect(url_for('home'))
     else:
