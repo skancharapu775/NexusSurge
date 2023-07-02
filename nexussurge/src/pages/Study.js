@@ -186,8 +186,8 @@ export function Study() {
                       flexDirection: 'row',
                       fontFamily: 'Rubik',
                       backgroundColor: scolor,
-                      marginLeft: '5vh',
-                      marginRight: '5vh'
+                      marginLeft: '3vw',
+                      marginRight: '3vw'
                     }}
                   >
 
@@ -235,8 +235,8 @@ export function Study() {
                         fontFamily: 'Rubik',
                         alignItems: 'center',
                         backgroundColor: scolor,
-                        marginLeft: '4vh',
-                        marginRight: '4vh'
+                        marginLeft: '3vw',
+                        marginRight: '3vw'
                       }}
                     >
                       <Box sx={{ flexGrow: 1 }}>

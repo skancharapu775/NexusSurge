@@ -11,7 +11,7 @@ export default function SideDrawer({ sets }) {
   const scolor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
   const fcolor = getComputedStyle(document.documentElement).getPropertyValue('--font-color');
   const bcolor = getComputedStyle(document.documentElement).getPropertyValue('--base-color');
-  const sbcolor = getComputedStyle(document.documentElement).getPropertyValue('--box-color');
+  const sbcolor = getComputedStyle(document.documentElement).getPropertyValue('--sidebar-color');
   const btcolor = getComputedStyle(document.documentElement).getPropertyValue('--button-color'); 
 
   return (

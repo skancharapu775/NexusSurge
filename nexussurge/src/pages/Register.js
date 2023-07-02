@@ -13,6 +13,7 @@ export function Register() {
   const bcolor = getComputedStyle(document.documentElement).getPropertyValue('--base-color');
   const sbcolor = getComputedStyle(document.documentElement).getPropertyValue('--box-color');
   const btcolor = getComputedStyle(document.documentElement).getPropertyValue('--button-color');
+  const addcolor = getComputedStyle(document.documentElement).getPropertyValue('--box-color');
 
   const handleSubmit = (event) => {
     event.preventDefault();

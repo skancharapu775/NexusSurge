@@ -2,11 +2,12 @@
   --base-color: rgb(25, 24, 37);
   --font-color: rgb(202, 207, 255);
   --secondary-color: rgb(76, 72, 107);
-  --box-color: rgb(9, 45, 58);
+  --sidebar-color: rgb(9, 45, 58);
   --button-color: rgb(50, 31, 196);
   --toolbar-color: rgb(86, 76, 180);
-  --profile-color: rgb(40, 39, 52);
+  --profile-color: rgb(42, 31, 93);
   --base-secondary: rgb(37, 36, 55);
+  --add-color:rgba(99, 38, 169, 0.365);
 }
 .App {
   text-align: center;

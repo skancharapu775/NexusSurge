@@ -10,7 +10,7 @@ CORS(app) # comment line on deployment
 app.secret_key = 'somethingrandom'
 
 # session.permanent = true defines this as permanent
-app.permanent_session_lifetime = timedelta(days=2)
+app.permanent_session_lifetime = timedelta(days=14)
 
 
 @app.after_request
@@ -44,8 +44,8 @@ def home ():
             return # not_logged_in, send popular sets
     
 # study materials
-@app.route('/sets', methods=['GET', 'POST'])
-def sets():
+@app.route('/add', methods=['GET', 'POST'])
+def add():
 
     if request.method == "POST":
         # possiblities: game buttons on recent sets, search database, import section
@@ -80,7 +80,7 @@ def profile():
         return 
     else:
         if 'active' in session:
-            # pull profile data from database
+            # pull profile data from session
             # add session
             return # profile data
         else:  
@@ -91,8 +91,19 @@ def profile():
 def login():
 
     if request.method == "POST":
-        # pull session data from database
+        session.permanent = True
+        session['active'] = True
+        
+        data = request.form
+        username = data['username']
+        session["username"] = username
+
+        sqliteConnection = sqlite3.connect('nexus_DB.db')
+
         return redirect(url_for('home'))
+    else:
+        if "active" in session:
+            return redirect(url_for('home'))
 
 @app.route('/add_new_user', methods=['GET', 'POST'])
 def add_new_user():

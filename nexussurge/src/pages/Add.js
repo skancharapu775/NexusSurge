@@ -8,9 +8,9 @@ export function Add() {
     const scolor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
     const fcolor = getComputedStyle(document.documentElement).getPropertyValue('--font-color');
     const bcolor = getComputedStyle(document.documentElement).getPropertyValue('--base-color');
-    const sbcolor = getComputedStyle(document.documentElement).getPropertyValue('--box-color');
     const btcolor = getComputedStyle(document.documentElement).getPropertyValue('--button-color');
     const bscolor = getComputedStyle(document.documentElement).getPropertyValue('--base-secondary');
+    const sbcolor = getComputedStyle(document.documentElement).getPropertyValue('--add-color');
 
 
     /* Example API result from searching database */

@@ -10,10 +10,11 @@ const user = {
     studySets: ['Algebra 1', 'Spanish 2', 'English 2', 'Physics 2', 'American History']
 }
 
-const pfcolor = getComputedStyle(document.documentElement).getPropertyValue('--profile-color');
+const pfcolor = getComputedStyle(document.documentElement).getPropertyValue('--base-secondary');
 const scolor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
 const fcolor = getComputedStyle(document.documentElement).getPropertyValue('--font-color');
 const bscolor = getComputedStyle(document.documentElement).getPropertyValue('--base-secondary');
+
 
 export function Profile() {
   return (

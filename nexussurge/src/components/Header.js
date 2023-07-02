@@ -10,7 +10,7 @@ import '../App.css';
 export default function Header() {
 
     {/* figure out how sessions work to do this well */}
-    const logged_in = false;
+    const logged_in = true;
 
     const user = {
         username: "John Doe",
@@ -45,14 +45,14 @@ export default function Header() {
                         <Typography position='fixed' variant='h6' component='div' sx={{ flexGrow: 0, fontFamily: 'Rubik', ml: '2%' }}>
                             NexusSurge
                         </Typography>
-                        <Stack position='fixed' direction='row' spacing = {1} sx={{ fontFamily: 'Rubik', ml: '40%' }}>
+                        <Stack position='fixed' direction='row' spacing = {1} sx={{ fontFamily: 'Rubik', ml: '38%' }}>
                             <Button id="hbtn" sx={{ fontFamily: 'Rubik' }} color='inherit' href='/home'>Home</Button>
-                            <Button id="hbtn" sx={{ fontFamily: 'Rubik' }} color='inherit' href='/sets'>Sets</Button>
+                            <Button id="hbtn" sx={{ fontFamily: 'Rubik' }} color='inherit' href='/add'>Add</Button>
                             <Button id="hbtn" sx={{ fontFamily: 'Rubik' }} color='inherit' href='/study'>Study</Button>
                             <Button id="hbtn" sx={{ fontFamily: 'Rubik' }} color='inherit' href='/profile'>Profile</Button>
                         </Stack>
                         {logged_in ? (
-                            <Stack position='fixed' direction='row' spacing={1} sx={{ ml: '95%' }}> {/* profile button*/}
+                            <Stack position='fixed' direction='row' spacing={1} sx={{ ml: '92.5%' }}> {/* profile button*/}
                                 <Button sx={{ fontFamily: 'Rubik' }} color='inherit' onClick={handleClick}>
                                     <img src={user.profilePicture} alt='Profile' style={{ borderRadius: '50%', width: '30px', height: '30px' }} />
                                 </Button>
