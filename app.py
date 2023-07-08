@@ -80,9 +80,7 @@ def profile():
         return 
     else:
         if 'active' in session:
-            # pull profile data from session
-            # add session
-            return # profile data
+            return json.dumps(session)
         else:  
             return redirect('/')
         
@@ -114,11 +112,13 @@ def login():
         # Grab session data with executions
         session["user"]["usertype"] = "usertype"
         session["user"]["description"] = "description"
+        session["user"]["role"] = "role"
         
         # Somehow get image from database
         session["user"]["profile_image"] = "image"
         
         # list of set objects, needs to be parsed, including last opened date
+        session["set_string"] = "string_from_database"
         session["sets"] = []
 
         sqliteConnection.close()
@@ -127,6 +127,26 @@ def login():
     else:
         if "active" in session:
             return redirect(url_for('home'))
+        
+
+'''
+
+User Session Format:
+
+session = {}
+
+session['active'] = True    
+
+session["user"]["user_id"] = user id
+session["user"]["username"] = username
+session["user"]["description"] = user's bio
+session["user"]["role"] = role (student or teacher)
+session["user"]["profile_image"] = somehow store image
+
+session["sets"] = list of user's set objects
+sessionp["set_string"] = raw string from database
+
+'''
 
 @app.route('/add_new_user', methods=['GET', 'POST'])
 def add_new_user():
